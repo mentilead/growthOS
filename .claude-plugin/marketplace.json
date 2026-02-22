@@ -1,0 +1,33 @@
+{
+  "name": "mentilead-growthos",
+  "owner": {
+    "name": "Peer Jakobsen",
+    "email": "pj@mentilead.com"
+  },
+  "metadata": {
+    "description": "Marketing operating system for Shopify app developers"
+  },
+  "plugins": [
+    {
+      "name": "mentilead-growthos",
+      "source": {
+        "source": "github",
+        "repo": "mentilead/growthOS"
+      },
+      "description": "Guides you from positioning through scaling with structured workflows, experiment tracking, and Shopify-specific best practices — all powered by local markdown files.",
+      "version": "0.2.0",
+      "author": {
+        "name": "Mentilead"
+      },
+      "repository": "https://github.com/mentilead/growthOS",
+      "license": "MIT",
+      "keywords": [
+        "shopify",
+        "marketing",
+        "growth",
+        "app-store",
+        "saas"
+      ]
+    }
+  ]
+}
