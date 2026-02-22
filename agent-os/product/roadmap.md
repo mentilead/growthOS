@@ -17,19 +17,20 @@
 3. [Phase 1: Plugin Scaffold & Core Infrastructure](#phase-1-plugin-scaffold--core-infrastructure) ✅ COMPLETE
 4. [Phase 1.5: Multi-App Portfolio Architecture Migration](#phase-15-multi-app-portfolio-architecture-migration) ✅ COMPLETE
 5. [Phase 2: Initialization & Onboarding Skill](#phase-2-initialization--onboarding-skill) ✅ COMPLETE
-6. [Phase 3: Positioning & ICP Skills](#phase-3-positioning--icp-skills)
-7. [Phase 4: App Store Optimization Skill](#phase-4-app-store-optimization-skill)
-8. [Phase 5: Outreach & Cold Email Skill](#phase-5-outreach--cold-email-skill)
-9. [Phase 6: Experiment Engine Skill](#phase-6-experiment-engine-skill)
-10. [Phase 7: Content Strategy Skill](#phase-7-content-strategy-skill)
-11. [Phase 8: Review & Social Proof Skill](#phase-8-review--social-proof-skill)
-12. [Phase 9: Partnership & Channel Skill](#phase-9-partnership--channel-skill)
-13. [Phase 10: Metrics Dashboard & Status Commands](#phase-10-metrics-dashboard--status-commands)
-14. [Phase 11: Weekly Review & Advisory System](#phase-11-weekly-review--advisory-system)
-15. [Phase 12: Documentation, README & Community Launch](#phase-12-documentation-readme--community-launch)
-16. [Appendix A: File Templates](#appendix-a-file-templates)
-17. [Appendix B: Shopify Marketing Reference Data](#appendix-b-shopify-marketing-reference-data)
-18. [Appendix C: Distribution & Community Strategy](#appendix-c-distribution--community-strategy)
+6. [Phase 3: Positioning & ICP Skills](#phase-3-positioning--icp-skills) ✅ COMPLETE
+7. [Phase 3.5: App Idea Validator Skill](#phase-35-app-idea-validator-skill) ✅ COMPLETE
+8. [Phase 4: App Store Optimization Skill](#phase-4-app-store-optimization-skill)
+9. [Phase 5: Outreach & Cold Email Skill](#phase-5-outreach--cold-email-skill)
+10. [Phase 6: Experiment Engine Skill](#phase-6-experiment-engine-skill)
+11. [Phase 7: Content Strategy Skill](#phase-7-content-strategy-skill)
+12. [Phase 8: Review & Social Proof Skill](#phase-8-review--social-proof-skill)
+13. [Phase 9: Partnership & Channel Skill](#phase-9-partnership--channel-skill)
+14. [Phase 10: Metrics Dashboard & Status Commands](#phase-10-metrics-dashboard--status-commands)
+15. [Phase 11: Weekly Review & Advisory System](#phase-11-weekly-review--advisory-system)
+16. [Phase 12: Documentation, README & Community Launch](#phase-12-documentation-readme--community-launch)
+17. [Appendix A: File Templates](#appendix-a-file-templates)
+18. [Appendix B: Shopify Marketing Reference Data](#appendix-b-shopify-marketing-reference-data)
+19. [Appendix C: Distribution & Community Strategy](#appendix-c-distribution--community-strategy)
 
 ---
 
@@ -243,14 +244,14 @@ marketing/
 ### Tasks
 
 #### 1.1 Repository Setup
-- [ ] Create GitHub repository `mentilead/growthOS`
-- [ ] Initialize with the directory structure shown in [Architecture](#repository-structure)
-- [ ] Create `.claude-plugin/plugin.json` with manifest content shown above
-- [ ] Create `LICENSE` file with MIT license, copyright Mentilead 2026
-- [ ] Create `CLAUDE.md` with plugin development context and conventions
+- [x] Create GitHub repository `mentilead/growthOS`
+- [x] Initialize with the directory structure shown in [Architecture](#repository-structure)
+- [x] Create `.claude-plugin/plugin.json` with manifest content shown above
+- [x] Create `LICENSE` file with MIT license, copyright Mentilead 2026
+- [x] Create `CLAUDE.md` with plugin development context and conventions
 
 #### 1.2 CLAUDE.md (Plugin Project Memory)
-- [ ] Create `CLAUDE.md` at repository root with content:
+- [x] Create `CLAUDE.md` at repository root with content:
 
 ```markdown
 # Mentilead GrowthOS — Claude Code Plugin
@@ -283,96 +284,96 @@ It uses local markdown files as persistent state/memory for marketing activities
 Create all reference files in `references/` with detailed, Shopify-specific content:
 
 ##### `references/shopify-aso-guide.md`
-- [ ] App name: 30 characters max — every character is SEO real estate
-- [ ] Subtitle: 62 characters max — secondary keywords here
-- [ ] App introduction: 100 characters — value proposition summary
-- [ ] Search terms: Up to 20 allowed, top keyword typically generates as many searches as next 10 combined
-- [ ] Description structure: PAS (Problem-Agitate-Solution) or AIDA framework
-- [ ] Only 2% of visitors click "more" to read full description — above-fold content determines install rate
-- [ ] Screenshot requirements: Up to 6 screenshots, first 3 visible without scrolling, annotated > raw
-- [ ] Video: Strongly preferred over static screenshots, 30-60 seconds, show value immediately
-- [ ] Interactive demos increase conversion 20-40%
-- [ ] "Built for Shopify" certification: 49% install increase within 14 days of earning badge
-- [ ] Keyword research methodology: Shopify search autocomplete, competitor listings, merchant forums
-- [ ] Listing changelog format: Date | Change | Metric Before | Metric After
+- [x] App name: 30 characters max — every character is SEO real estate
+- [x] Subtitle: 62 characters max — secondary keywords here
+- [x] App introduction: 100 characters — value proposition summary
+- [x] Search terms: Up to 20 allowed, top keyword typically generates as many searches as next 10 combined
+- [x] Description structure: PAS (Problem-Agitate-Solution) or AIDA framework
+- [x] Only 2% of visitors click "more" to read full description — above-fold content determines install rate
+- [x] Screenshot requirements: Up to 6 screenshots, first 3 visible without scrolling, annotated > raw
+- [x] Video: Strongly preferred over static screenshots, 30-60 seconds, show value immediately
+- [x] Interactive demos increase conversion 20-40%
+- [x] "Built for Shopify" certification: 49% install increase within 14 days of earning badge
+- [x] Keyword research methodology: Shopify search autocomplete, competitor listings, merchant forums
+- [x] Listing changelog format: Date | Change | Metric Before | Metric After
 
 ##### `references/merchant-segments.md`
-- [ ] Segmentation by plan: Starter, Basic, Shopify, Advanced, Plus
-- [ ] Segmentation by vertical: Fashion (1.8-2.5% conv), Food (3-5%), Electronics (0.8-1.5%), Home (1.5-2.5%), Beauty (2-3.5%)
-- [ ] Segmentation by technical sophistication: Plug-and-play → Theme customizer → App power user → Headless/API-first
-- [ ] Segmentation by business stage: New (<6mo) → Growing (6mo-2yr) → Established (2-5yr) → Enterprise (5yr+)
-- [ ] Segmentation by B2B vs B2C vs hybrid
-- [ ] ICP worksheet template using Value Proposition Canvas: Customer Jobs → Pains → Gains vs. Pain Relievers → Gain Creators
-- [ ] How to validate ICP: Shopify Community forums, Reddit r/shopify, competitor reviews, social listening
+- [x] Segmentation by plan: Starter, Basic, Shopify, Advanced, Plus
+- [x] Segmentation by vertical: Fashion (1.8-2.5% conv), Food (3-5%), Electronics (0.8-1.5%), Home (1.5-2.5%), Beauty (2-3.5%)
+- [x] Segmentation by technical sophistication: Plug-and-play → Theme customizer → App power user → Headless/API-first
+- [x] Segmentation by business stage: New (<6mo) → Growing (6mo-2yr) → Established (2-5yr) → Enterprise (5yr+)
+- [x] Segmentation by B2B vs B2C vs hybrid
+- [x] ICP worksheet template using Value Proposition Canvas: Customer Jobs → Pains → Gains vs. Pain Relievers → Gain Creators
+- [x] How to validate ICP: Shopify Community forums, Reddit r/shopify, competitor reviews, social listening
 
 ##### `references/funnel-benchmarks.md`
-- [ ] **Listing views → "Add App" click:** Average 20%, good 30-40%, excellent 40%+, poor <5% (rework listing)
-- [ ] **"Add App" → Install complete:** Average 60-70%, good 80%+
-- [ ] **Install → Onboarding complete:** Average 40-60%, good 70%+
-- [ ] **Onboarding → Activation (first value moment):** Average 30-50%, good 60%+
-- [ ] **Activation → Trial to paid:** Average 10-20%, good 20%+, poor <10%
-- [ ] **Paid → 30-day retention:** Average 70-80%, good 85%+
-- [ ] **77% of daily active users lost within first 3 days post-install**
-- [ ] **Reviews needed for organic discovery:** 20-60 reviews
-- [ ] **Users per review:** 33-100 users to get one review on average
-- [ ] **Time to milestones (realistic):**
+- [x] **Listing views → "Add App" click:** Average 20%, good 30-40%, excellent 40%+, poor <5% (rework listing)
+- [x] **"Add App" → Install complete:** Average 60-70%, good 80%+
+- [x] **Install → Onboarding complete:** Average 40-60%, good 70%+
+- [x] **Onboarding → Activation (first value moment):** Average 30-50%, good 60%+
+- [x] **Activation → Trial to paid:** Average 10-20%, good 20%+, poor <10%
+- [x] **Paid → 30-day retention:** Average 70-80%, good 85%+
+- [x] **77% of daily active users lost within first 3 days post-install**
+- [x] **Reviews needed for organic discovery:** 20-60 reviews
+- [x] **Users per review:** 33-100 users to get one review on average
+- [x] **Time to milestones (realistic):**
   - First install: Week 2-3
   - First review: Month 1
   - 10 active installs: Month 2-3
   - 50 active installs: Month 6
   - 100 active installs: Month 9-12
   - First $1K MRR: Month 8
-- [ ] Cost benchmarks: CAC poor $50+, average $20-50, good <$20
-- [ ] Revenue distribution: 54.53% under $1K/mo, 0.18% above $83K/mo
+- [x] Cost benchmarks: CAC poor $50+, average $20-50, good <$20
+- [x] Revenue distribution: 54.53% under $1K/mo, 0.18% above $83K/mo
 
 ##### `references/outreach-playbook.md`
-- [ ] Cold outreach converts at 1-2% from random emails
-- [ ] Targeting merchants who recently uninstalled a competitor: 15-25% conversion
-- [ ] Email rules: Under 100 words, plain text, personalized, no links in first email
-- [ ] Sequence: Max 3 emails, space 3-5 days apart
-- [ ] Tools for prospect research: StoreCensus, BuiltWith, manual research
-- [ ] Finding decision makers: LinkedIn, About page, WHOIS
-- [ ] Email template structures: Problem-first, insight-first, competitor-migration
-- [ ] What NOT to do: Generic templates, asking for time without giving value, targeting wrong stores
-- [ ] Merchants receive 20+ cold emails daily from app developers — personalization is non-negotiable
+- [x] Cold outreach converts at 1-2% from random emails
+- [x] Targeting merchants who recently uninstalled a competitor: 15-25% conversion
+- [x] Email rules: Under 100 words, plain text, personalized, no links in first email
+- [x] Sequence: Max 3 emails, space 3-5 days apart
+- [x] Tools for prospect research: StoreCensus, BuiltWith, manual research
+- [x] Finding decision makers: LinkedIn, About page, WHOIS
+- [x] Email template structures: Problem-first, insight-first, competitor-migration
+- [x] What NOT to do: Generic templates, asking for time without giving value, targeting wrong stores
+- [x] Merchants receive 20+ cold emails daily from app developers — personalization is non-negotiable
 
 ##### `references/content-frameworks.md`
-- [ ] PAS framework: Problem → Agitate → Solution
-- [ ] AIDA framework: Attention → Interest → Desire → Action
-- [ ] Content types: Comparison posts, how-to guides, problem-solution articles, case studies
-- [ ] "Best Shopify Apps for [Category]" comparison content strategy
-- [ ] SEO for app developers: Target merchant pain point keywords, not app feature keywords
-- [ ] Reddit + Google "Discussions and Forums" strategy (major 2025-2026 search trend)
-- [ ] Content calendar template: Monthly themes, weekly publishing, topic-to-funnel-stage mapping
-- [ ] Distribution channels: Blog, Dev.to, Medium, Reddit, Shopify Community, LinkedIn, YouTube
+- [x] PAS framework: Problem → Agitate → Solution
+- [x] AIDA framework: Attention → Interest → Desire → Action
+- [x] Content types: Comparison posts, how-to guides, problem-solution articles, case studies
+- [x] "Best Shopify Apps for [Category]" comparison content strategy
+- [x] SEO for app developers: Target merchant pain point keywords, not app feature keywords
+- [x] Reddit + Google "Discussions and Forums" strategy (major 2025-2026 search trend)
+- [x] Content calendar template: Monthly themes, weekly publishing, topic-to-funnel-stage mapping
+- [x] Distribution channels: Blog, Dev.to, Medium, Reddit, Shopify Community, LinkedIn, YouTube
 
 ##### `references/review-strategies.md`
-- [ ] Review trigger timing: Day 3 (after onboarding), first value moment, Day 30 (active user), after positive support resolution, after feature request shipped
-- [ ] NEVER ask during: onboarding, free trial, with incentives (Shopify will remove app)
-- [ ] Shopify App Bridge Reviews API for in-product review requests
-- [ ] One 1-star review can cut daily installs in half
-- [ ] Always respond to reviews (positive and negative)
-- [ ] Beta user commitment language for honest reviews
-- [ ] Review response templates: Positive, negative-constructive, negative-unreasonable
+- [x] Review trigger timing: Day 3 (after onboarding), first value moment, Day 30 (active user), after positive support resolution, after feature request shipped
+- [x] NEVER ask during: onboarding, free trial, with incentives (Shopify will remove app)
+- [x] Shopify App Bridge Reviews API for in-product review requests
+- [x] One 1-star review can cut daily installs in half
+- [x] Always respond to reviews (positive and negative)
+- [x] Beta user commitment language for honest reviews
+- [x] Review response templates: Positive, negative-constructive, negative-unreasonable
 
 ##### `references/partnership-playbook.md`
-- [ ] Complementary app developers: cross-promotion, bundle deals, integration partnerships
-- [ ] Shopify agencies & consultants: 20-30% referral commission, white-glove onboarding for their clients
-- [ ] Industry experts & educators: course creators, YouTubers, newsletter writers, podcast hosts
-- [ ] PartnerJam for affiliate programs
-- [ ] Partnership outreach email templates
-- [ ] Partnership evaluation criteria: audience overlap, brand alignment, effort-to-value ratio
+- [x] Complementary app developers: cross-promotion, bundle deals, integration partnerships
+- [x] Shopify agencies & consultants: 20-30% referral commission, white-glove onboarding for their clients
+- [x] Industry experts & educators: course creators, YouTubers, newsletter writers, podcast hosts
+- [x] PartnerJam for affiliate programs
+- [x] Partnership outreach email templates
+- [x] Partnership evaluation criteria: audience overlap, brand alignment, effort-to-value ratio
 
 ##### `references/shopify-ads-guide.md`
-- [ ] Shopify App Store ads use CPC first-price auction
-- [ ] Highly relevant apps pay less and rank higher (quality score equivalent)
-- [ ] Don't start ads until: 4.0+ star rating, validated conversion rate, 5+ reviews
-- [ ] Start at $10-20/day budget, narrow keyword targeting, run 2+ weeks before judging
-- [ ] Segment keywords into separate campaigns for granular analysis
-- [ ] Use search term report to discover organic keyword opportunities
-- [ ] Shopify prohibits bidding on "Shopify" brand keyword for Google Ads
-- [ ] Google Ads: Feed install/subscribe/payment events to Smart Bidding via Prys attribution
-- [ ] LinkedIn for B2B apps: 89% of B2B marketers use LinkedIn, video posts 20x more likely to be shared
+- [x] Shopify App Store ads use CPC first-price auction
+- [x] Highly relevant apps pay less and rank higher (quality score equivalent)
+- [x] Don't start ads until: 4.0+ star rating, validated conversion rate, 5+ reviews
+- [x] Start at $10-20/day budget, narrow keyword targeting, run 2+ weeks before judging
+- [x] Segment keywords into separate campaigns for granular analysis
+- [x] Use search term report to discover organic keyword opportunities
+- [x] Shopify prohibits bidding on "Shopify" brand keyword for Google Ads
+- [x] Google Ads: Feed install/subscribe/payment events to Smart Bidding via Prys attribution
+- [x] LinkedIn for B2B apps: 89% of B2B marketers use LinkedIn, video posts 20x more likely to be shared
 
 #### 1.4 Template Files
 Create all template files in `templates/` with proper YAML frontmatter and placeholder content. These are copied into the user's `marketing/` directory during initialization.
@@ -1226,21 +1227,21 @@ created: YYYY-MM-DD
 
 #### 1.5.2 Refactor Existing Templates
 
-- [ ] **Rename `templates/marketing-memory.md` → keep as-is** but it becomes the fallback for single-app users. The init skill will use `portfolio-memory.md` for multi-app and `marketing-memory.md` for single-app.
-- [ ] **Rename `templates/marketing-status.md` → keep as-is** with same single-app fallback logic.
-- [ ] **Add `app_slug` field to `templates/experiment.md`** frontmatter:
+- [x] **Rename `templates/marketing-memory.md` → keep as-is** but it becomes the fallback for single-app users. The init skill will use `portfolio-memory.md` for multi-app and `marketing-memory.md` for single-app.
+- [x] **Rename `templates/marketing-status.md` → keep as-is** with same single-app fallback logic.
+- [x] **Add `app_slug` field to `templates/experiment.md`** frontmatter:
   ```yaml
   app_slug: ""     # which app this experiment is for (empty = portfolio-wide)
   ```
-- [ ] **Add `app_slug` field to `templates/outreach-campaign.md`** frontmatter:
+- [x] **Add `app_slug` field to `templates/outreach-campaign.md`** frontmatter:
   ```yaml
   app_slug: ""     # which app this campaign promotes
   ```
-- [ ] **Add `app_slug` column to `templates/experiment-backlog.md`** Active Queue table:
+- [x] **Add `app_slug` column to `templates/experiment-backlog.md`** Active Queue table:
   ```
   | ID | App | Experiment | I | C | E | ICE | Status | Channel |
   ```
-- [ ] **Update `templates/weekly-review.md`** Metrics Snapshot to include per-app rows:
+- [x] **Update `templates/weekly-review.md`** Metrics Snapshot to include per-app rows:
   ```
   | Metric | Portfolio | [App 1] | [App 2] | [App 3] | Target |
   ```
@@ -1422,23 +1423,23 @@ description: >
 ### Tasks
 
 #### 3.1 Positioning Skill Workflow
-- [ ] **Read context:** Load MEMORY.md for app info, load any existing positioning files
-- [ ] **Competitive Analysis Mode:**
+- [x] **Read context:** Load MEMORY.md for app info, load any existing positioning files
+- [x] **Competitive Analysis Mode:**
   - Guide developer through listing top 3-5 competitors
   - For each: category, strengths, weaknesses, pricing, review count, common complaints
   - Source competitor complaints from Shopify App Store reviews
   - Output to `marketing/positioning/positioning.md` competitive context section
-- [ ] **ICP Development Mode:**
+- [x] **ICP Development Mode:**
   - Walk through merchant segmentation (plan, vertical, sophistication, stage)
   - Apply Value Proposition Canvas: Customer Jobs → Pains → Gains
   - Suggest where to find/validate this ICP (forums, reddit, competitor reviews)
   - Output to `marketing/positioning/icp.md`
-- [ ] **JTBD Research Mode:**
+- [x] **JTBD Research Mode:**
   - Provide JTBD interview question templates
   - Guide developer through documenting switching moment forces
   - Synthesize into job statement format
   - Output to `marketing/positioning/jtbd.md`
-- [ ] **Positioning Statement Mode:**
+- [x] **Positioning Statement Mode:**
   - Use April Dunford's 5-step framework
   - Generate positioning statement from ICP + JTBD + competitive data
   - Create key messages, elevator pitch, objection handlers
@@ -1446,16 +1447,249 @@ description: >
   - Output to `marketing/positioning/positioning.md`
 
 #### 3.2 Reference Integration
-- [ ] Skill reads `references/merchant-segments.md` for segmentation frameworks
-- [ ] Skill reads `references/funnel-benchmarks.md` for realistic expectations by segment
-- [ ] Provides Shopify-specific examples throughout (not generic SaaS)
+- [x] Skill reads `references/merchant-segments.md` for segmentation frameworks
+- [x] Skill reads `references/funnel-benchmarks.md` for realistic expectations by segment
+- [x] Provides Shopify-specific examples throughout (not generic SaaS)
 
 ### Success Criteria
-- [ ] Developer has a written ICP profile with all fields populated
-- [ ] Competitive analysis covers top competitors with strengths/weaknesses
-- [ ] Positioning statement follows Dunford format and is Shopify-specific
-- [ ] MEMORY.md updated with core positioning data
-- [ ] All outputs are in the developer's `marketing/positioning/` directory
+- [x] Developer has a written ICP profile with all fields populated
+- [x] Competitive analysis covers top competitors with strengths/weaknesses
+- [x] Positioning statement follows Dunford format and is Shopify-specific
+- [x] MEMORY.md updated with core positioning data
+- [x] All outputs are in the developer's `marketing/positioning/` directory
+
+---
+
+## Phase 3.5: App Idea Validator Skill
+
+### Background
+
+The positioning skill (Phase 3) assumes you already have an app and need to position it. But many developers — including portfolio builders evaluating their next app — need to validate an app idea *before* writing code. The same frameworks (ICP, JTBD, competitive analysis) apply, but the entry point is different: instead of "tell me about your app" it starts with "tell me about the problem you think exists."
+
+This skill prevents the most expensive mistake in the Shopify ecosystem: building an app nobody wants. With 54.53% of apps earning under $1K/month and median first-three-month revenue of $0, pre-build validation is arguably higher-leverage than post-build marketing.
+
+### Goals
+- Provide a structured pre-build validation workflow for Shopify app ideas
+- Reuse the same ICP, JTBD, and competitive analysis frameworks from Phase 3
+- Output a go/no-go recommendation with supporting evidence
+- Store validated ideas as portfolio pipeline entries for future development
+- Works for both net-new ideas and "should I build a complementary app" decisions within an existing portfolio
+
+### Skill: `skills/idea-validator/SKILL.md`
+
+```yaml
+---
+name: growthOS-idea-validator
+description: >
+  Validate a Shopify app idea before building it. Analyzes competitive
+  landscape, identifies underserved merchants from competitor reviews,
+  maps demand signals from forums and communities, and produces a
+  go/no-go recommendation with evidence. Use when user says "app idea",
+  "should I build", "validate idea", "next app", "market gap", or
+  "is there demand for".
+---
+```
+
+### New Template: `templates/idea-validation.md`
+
+```markdown
+---
+idea_name: ""
+idea_slug: ""
+status: "exploring"  # exploring | validated | parked | rejected
+created: YYYY-MM-DD
+last_updated: YYYY-MM-DD
+go_no_go: ""        # go | no-go | pivot | needs-more-data
+confidence: 0        # 1-10 how confident in the assessment
+---
+
+# App Idea: [Name]
+
+## The Problem Hypothesis
+> [Target merchant type] currently struggles with [specific problem]
+> because [root cause]. They currently solve this by [workaround],
+> which fails because [limitation].
+
+## Competitive Landscape
+| Existing App | Installs | Rating | Reviews | Price | Key Weakness |
+|-------------|----------|--------|---------|-------|--------------|
+| | | | | | |
+
+### Gap Analysis
+(What are existing apps NOT doing that merchants need?)
+
+### Competitor Review Mining
+| Source App | Review Rating | Merchant Complaint | Our Opportunity |
+|-----------|--------------|-------------------|----------------|
+| | | | |
+
+## Demand Signals
+| Source | Signal | Date | Link/Reference |
+|--------|--------|------|----------------|
+| Shopify Community | | | |
+| Reddit r/shopify | | | |
+| Facebook Groups | | | |
+| Competitor reviews | | | |
+
+### Demand Score: _/10
+- Forum posts asking for this: _
+- Competitor complaints matching this: _
+- Search volume indicators: _
+
+## ICP Hypothesis
+- **Who:** 
+- **Shopify Plan:** 
+- **Vertical:** 
+- **Business Stage:** 
+- **Willingness to Pay:** 
+- **How many of them exist:** (rough TAM estimate)
+
+## JTBD Hypothesis
+> When [situation], I want to [motivation/job], so I can [expected outcome].
+
+### Switching Forces Assessment
+| Force | Strength (1-10) | Evidence |
+|-------|-----------------|----------|
+| Push (frustration with status quo) | | |
+| Pull (attraction of new solution) | | |
+| Anxiety (fear of switching) | | |
+| Habit (inertia) | | |
+
+## Feasibility Check
+- **Build complexity:** Simple / Moderate / Complex
+- **Estimated build time:** _ weeks
+- **Shopify API dependencies:** (which APIs needed?)
+- **Shopify Plus required?** Yes / No
+- **Regulatory/compliance concerns:** 
+
+## Portfolio Fit
+(For multi-app developers: how does this complement existing apps?)
+- **ICP overlap with existing apps:** Low / Medium / High
+- **Cross-sell potential:** 
+- **Shared infrastructure:** 
+
+## Pricing Hypothesis
+- **Target price range:** $X-Y/month
+- **Pricing model:** Free / Freemium / Paid-only / Usage-based
+- **Comparable app pricing:** 
+
+## Go / No-Go Recommendation
+
+### Verdict: [GO / NO-GO / PIVOT / NEEDS MORE DATA]
+
+### Confidence: _/10
+
+### Key Evidence For:
+1. 
+2. 
+3. 
+
+### Key Risks:
+1. 
+2. 
+3. 
+
+### If GO — Next Steps:
+1. 
+2. 
+3. 
+
+### If PIVOT — Alternative Direction:
+(What adjacent problem might be better?)
+```
+
+### New Reference: `references/idea-validation-guide.md`
+
+Create a reference file with validation methodology:
+
+- [x] **5-Signal Validation Framework:**
+  1. Competitor weakness signals (1-3 star reviews mentioning specific pain)
+  2. Community demand signals (forum posts, Reddit threads asking for solutions)
+  3. Search volume signals (Shopify App Store autocomplete, Google Trends)
+  4. Willingness-to-pay signals (merchants already paying competitors, budget discussions in forums)
+  5. Feasibility signals (Shopify APIs support it, reasonable build scope)
+- [x] **Minimum Viable Evidence thresholds:**
+  - At least 10 competitor reviews mentioning the pain point
+  - At least 5 forum/Reddit threads in the past 6 months asking for this
+  - At least 2 existing competitors (proves market exists) but with clear gaps
+  - Price point merchants are already paying for adjacent solutions
+- [x] **Red flags that kill ideas:**
+  - Zero competitors (usually means no market, not opportunity)
+  - Problem only exists for Shopify Plus merchants (tiny addressable market)
+  - Requires store theme modification (high friction, support burden)
+  - Shopify is actively building this into core platform (check Editions announcements)
+  - Single-use setup tool (no recurring value = no recurring revenue)
+- [x] **Portfolio expansion criteria:**
+  - ICP overlap > 60% with existing apps
+  - Cross-sell opportunity clear and natural
+  - Shared support and documentation infrastructure
+  - Doesn't cannibalize existing app revenue
+- [x] **Idea parking vs. rejection:**
+  - Park: demand exists but timing is wrong, build capacity not available, need more data
+  - Reject: no demand evidence, unfeasible, market too small, Shopify building it natively
+
+### Tasks
+
+#### 3.5.1 Idea Validator Skill Workflow
+
+The skill should support these modes:
+
+- [x] **Exploration Mode** ("I have an idea"):
+  1. Ask developer to describe the problem they think exists (not the solution)
+  2. Identify the Shopify App Store category this falls into
+  3. Search for existing competitors in that space
+  4. Guide developer through competitor review mining (what are merchants complaining about?)
+  5. Map demand signals from Shopify Community, Reddit, Facebook Groups
+  6. Assess switching forces (push, pull, anxiety, habit)
+  7. Check portfolio fit if developer has existing apps
+  8. Produce go/no-go recommendation
+
+- [x] **Gap Discovery Mode** ("what should I build next?"):
+  1. Read portfolio MEMORY.md for existing apps and ICP
+  2. Identify adjacent problem spaces based on current ICP
+  3. Mine competitor reviews in adjacent categories for unmet needs
+  4. Scan Shopify Community forums for recurring merchant frustrations in the B2B/wholesale space
+  5. Present top 3-5 opportunities ranked by demand × feasibility × portfolio fit
+  6. Deep-dive on selected opportunity using Exploration Mode
+
+- [x] **Quick Pulse Mode** ("is there demand for X?"):
+  1. Take a one-line idea description
+  2. Quick competitor check (who's doing this, how many, what ratings)
+  3. Quick demand check (recent forum posts, Reddit mentions)
+  4. Return a 1-10 demand score with 3 bullet evidence summary
+  5. Recommend full validation or park/reject
+
+#### 3.5.2 File Management
+- [x] Validated ideas stored in `marketing/ideas/` directory (new)
+- [x] Each idea gets its own file: `marketing/ideas/{idea-slug}.md`
+- [x] Ideas with `status: validated` and `go_no_go: go` are flagged in STATUS.md under a "Pipeline" section
+- [x] When an idea graduates to a real app, init skill can convert the idea file into the app's initial `app.md` and `positioning.md`
+
+#### 3.5.3 Integration with Existing Skills
+- [x] Reads `references/merchant-segments.md` for segmentation during ICP hypothesis
+- [x] Reads `references/funnel-benchmarks.md` for realistic revenue expectations
+- [x] Reads portfolio MEMORY.md to understand existing ICP and cross-sell opportunities
+- [x] Validated ideas with `go: true` feed into the init skill when creating a new app
+
+### Directory Addition
+
+Add to the marketing directory structure:
+```
+marketing/
+├── ... (existing structure)
+└── ideas/                             # App idea pipeline
+    ├── .gitkeep
+    └── {idea-slug}.md                 # Individual idea validations
+```
+
+### Success Criteria
+- [x] Skill creates idea validation files in `marketing/ideas/`
+- [x] Competitor review mining produces specific, actionable pain points
+- [x] Demand signal assessment uses multiple sources (not just one forum)
+- [x] Go/no-go recommendation includes confidence score and evidence
+- [x] Gap Discovery mode leverages existing portfolio data for adjacent opportunities
+- [x] Quick Pulse mode returns useful signal in under 2 minutes
+- [x] Validated ideas integrate with init skill for seamless app creation
 
 ---
 

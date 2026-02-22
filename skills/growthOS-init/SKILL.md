@@ -38,6 +38,7 @@ Active experiments: {count from STATUS.md}
 After presenting current state, determine what the user wants:
 
 - **"add app"** or user wants to register a new app → jump to **Add-App Sub-Flow** (bottom of this skill)
+  - **Idea graduation:** If `marketing/ideas/` exists and contains a validated idea (frontmatter `go_no_go: go`), ask: "You have a validated idea — [idea_name]. Want to use it as the starting point for this app?" If yes, pre-populate Step 2 fields from the idea file: problem hypothesis → one-liner, ICP hypothesis → positioning basics, competitors → top competitors, pricing hypothesis → pricing model. Update the idea file status to `graduated`.
 - **"update info"** or user wants to change app details → read the relevant file, ask what to update, write changes. Do NOT recreate the directory structure.
 - **"reset"** followed by a section name → confirm which section to reset, then re-populate only that section from templates. Never reset without listing exactly what will be overwritten and getting confirmation.
 - **No specific request** → recommend the most appropriate next skill based on current phase and status (use the logic from Step 5)
