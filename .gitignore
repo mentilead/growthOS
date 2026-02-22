@@ -11,8 +11,6 @@
 # Claude Code
 .claude/
 
-# Agent OS (local development standards, not part of the plugin)
-agent-os/
 
 # User marketing data (created by the plugin in user projects, not in this repo)
 marketing/

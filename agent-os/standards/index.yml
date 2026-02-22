@@ -1,0 +1,24 @@
+# Agent OS Standards Index — Mentilead GrowthOS
+# Claude Code plugin for Shopify app marketing (pure markdown, zero dependencies)
+
+plugin:
+  tech-stack:
+    description: Platform architecture — Claude Code plugin system, markdown skills, local filesystem, no dependencies
+  skill-authoring:
+    description: How to write SKILL.md files — frontmatter constraints, body limits, context budget, workflow pattern, safety rules
+  slash-commands:
+    description: Slash command conventions — naming, design rules, quick-access patterns
+
+content:
+  markdown-style:
+    description: Markdown formatting — YAML frontmatter, headings, tables, lists, placeholder content
+  shopify-data:
+    description: Shopify data accuracy — benchmark sourcing, constraint exactness, honest tone
+  reference-files:
+    description: Reference file standards — structure, content rules, naming, domain focus
+
+global:
+  file-conventions:
+    description: File conventions — dates (ISO 8601), IDs (EXP-NNN), status vocabulary, naming patterns
+  design-principles:
+    description: Design principles — filesystem as database, progressive disclosure, solo dev empathy, file safety, privacy
