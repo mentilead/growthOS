@@ -21,7 +21,7 @@
 7. [Phase 3.5: App Idea Validator Skill](#phase-35-app-idea-validator-skill) ✅ COMPLETE
 8. [Phase 4: App Store Optimization Skill](#phase-4-app-store-optimization-skill) ✅ COMPLETE
 9. [Phase 5: Outreach & Cold Email Skill](#phase-5-outreach--cold-email-skill) ✅ COMPLETE
-10. [Phase 6: Experiment Engine Skill](#phase-6-experiment-engine-skill)
+10. [Phase 6: Experiment Engine Skill](#phase-6-experiment-engine-skill) ✅ COMPLETE
 11. [Phase 7: Content Strategy Skill](#phase-7-content-strategy-skill)
 12. [Phase 8: Review & Social Proof Skill](#phase-8-review--social-proof-skill)
 13. [Phase 9: Partnership & Channel Skill](#phase-9-partnership--channel-skill)
@@ -1823,7 +1823,7 @@ description: >
 
 ---
 
-## Phase 6: Experiment Engine Skill
+## Phase 6: Experiment Engine Skill ✅ COMPLETE
 
 ### Goals
 - Systematic experiment management with ICE scoring
@@ -1841,32 +1841,33 @@ description: >
   Create, prioritize, track, and analyze experiments across all marketing
   channels. Maintains experiment backlog, enforces limits, and documents
   learnings. Use when user wants to run a marketing test, prioritize
-  experiments, review experiment results, or manage their experiment backlog.
+  experiments, review experiment results, manage their experiment backlog,
+  track a hypothesis, check ICE scores, or get experiment suggestions.
 ---
 ```
 
 ### Tasks
 
 #### 6.1 Experiment Engine Workflow
-- [ ] **New Experiment:**
+- [x] **New Experiment:**
   - Guide through hypothesis creation: "If we [action], then [metric] will [change], because [reasoning]"
   - Set ICE scores (Impact, Confidence, Ease — each 1-10)
   - Define success criteria and damage control metric
   - Check active experiment count (enforce max 3 for solo developers)
   - Create experiment file in `marketing/experiments/exp-NNN-title.md`
   - Add to backlog in `marketing/experiments/backlog.md`
-- [ ] **Backlog Management:**
+- [x] **Backlog Management:**
   - Sort experiments by ICE score
   - Flag if <20% are "big swings" (high impact, low confidence)
   - Suggest experiments based on current phase and funnel bottlenecks
   - Park experiments with reason
-- [ ] **Experiment Review:**
+- [x] **Experiment Review:**
   - Prompt for results data
   - Calculate actual vs. expected outcome
   - Document learnings (regardless of success/failure)
   - Update experiment status in backlog
   - Update MEMORY.md with key learnings
-- [ ] **Experiment Suggestions:**
+- [x] **Experiment Suggestions:**
   - Based on current funnel metrics, suggest experiments to run
   - Pre-populate hypothesis templates for common Shopify experiments:
     - Title A/B test
@@ -1879,15 +1880,15 @@ description: >
     - Review ask timing
 
 #### 6.2 Slash Command: `/growthOS-experiment`
-- [ ] Quick experiment status: active experiments, next up in backlog, recently completed
+- [x] Quick experiment status: active experiments, next up in backlog, recently completed
 
 ### Success Criteria
-- [ ] Experiments create properly formatted files with YAML frontmatter
-- [ ] ICE scoring enforced on all experiments
-- [ ] Max 3 active experiments enforced with warning
-- [ ] Backlog sorted by ICE score
-- [ ] Completed experiments include learnings section
-- [ ] 20% big-swing rule flagged during weekly review
+- [x] Experiments create properly formatted files with YAML frontmatter
+- [x] ICE scoring enforced on all experiments
+- [x] Max 3 active experiments enforced with warning
+- [x] Backlog sorted by ICE score
+- [x] Completed experiments include learnings section
+- [x] 20% big-swing rule flagged during weekly review
 
 ---
 

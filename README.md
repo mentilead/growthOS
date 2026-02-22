@@ -1,5 +1,12 @@
 # Mentilead GrowthOS
 
+[![Version](https://img.shields.io/badge/version-0.3.0-blue)](https://github.com/mentilead/growthOS/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-blueviolet)](https://claude.com/claude-code)
+[![Shopify](https://img.shields.io/badge/Shopify-App_Marketing-96bf48?logo=shopify&logoColor=white)](https://apps.shopify.com)
+[![Markdown](https://img.shields.io/badge/Powered_by-Markdown-000?logo=markdown)](https://daringfireball.net/projects/markdown/)
+[![Zero Dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen)]()
+
 A Claude Code plugin that turns your local filesystem into a structured marketing operating system for Shopify app developers.
 
 GrowthOS guides you through the full marketing lifecycle — from positioning and ICP definition through app store optimization, outreach, and scaling — using local markdown files as persistent state.
@@ -19,7 +26,7 @@ This plugin encodes proven Shopify marketing methodology into a structured, repe
 | **Idea Validator** | Ready | Validate app ideas with a 5-Signal Framework before you build |
 | **ASO Optimizer** | Ready | Optimize your App Store listing (title, subtitle, keywords, description, visuals) |
 | **Outreach** | Ready | Build cold email campaigns with segment targeting and template generation |
-| Experiment Engine | Coming soon | ICE-scored experiment management |
+| **Experiment Engine** | Ready | ICE-scored experiment management with hypothesis tracking, backlog prioritization, and results analysis |
 | Content Strategy | Coming soon | Content marketing planner |
 | Review Manager | Coming soon | Review acquisition and social proof |
 | Partnerships | Coming soon | Partnership and channel development |
@@ -40,9 +47,20 @@ Then install the plugin:
 /plugin install mentilead-growth-os
 ```
 
-### From file
+### Claude Cowork (web)
 
-Download the [latest release](https://github.com/mentilead/growthOS/releases) and upload it in Claude Code/Cowork under Plugins.
+1. Download the [latest release](https://github.com/mentilead/growthOS/releases) as a `.zip` file
+2. Open [Claude Cowork](https://claude.com)
+3. Go to **Plugins** in the sidebar
+4. Click **Upload plugin** and select the downloaded `.zip` file
+
+### Claude Code (CLI)
+
+Download the [latest release](https://github.com/mentilead/growthOS/releases) and install from the local file:
+
+```
+/plugin install /path/to/mentilead-growthOS.zip
+```
 
 ## Quick Start
 
@@ -52,6 +70,7 @@ After installing, just tell Claude what you need:
 - *"Optimize my app store listing"* — starts the ASO optimizer
 - *"I need to validate an app idea"* — starts the idea validator
 - *"Help me build an outreach campaign"* — starts the outreach skill
+- *"I want to run a marketing experiment"* — starts the experiment engine
 - *"Set up my marketing workspace"* — starts initialization
 
 GrowthOS creates a `marketing/` directory in your project with structured markdown files that track your entire marketing strategy. Everything is human-readable and git-trackable.
@@ -77,6 +96,9 @@ marketing/
     targets.md           # Target merchant segments
     templates.md         # Email sequence templates
     campaigns/           # Individual campaign tracking
+  experiments/
+    backlog.md           # ICE-scored experiment queue
+    exp-001-*.md         # Individual experiment files
   logs/                  # Daily session logs
 ```
 
