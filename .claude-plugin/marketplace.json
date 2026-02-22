@@ -1,5 +1,5 @@
 {
-  "name": "mentilead-growthos",
+  "name": "mentilead-growth-os",
   "owner": {
     "name": "Peer Jakobsen",
     "email": "pj@mentilead.com"
@@ -9,7 +9,7 @@
   },
   "plugins": [
     {
-      "name": "mentilead-growthos",
+      "name": "mentilead-growth-os",
       "source": {
         "source": "github",
         "repo": "mentilead/growthOS"
