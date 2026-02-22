@@ -1717,50 +1717,50 @@ description: >
 ### Tasks
 
 #### 4.1 ASO Skill Workflow
-- [ ] **Read context:** Load MEMORY.md (positioning), load existing listing copy if any
-- [ ] **Listing Audit Mode:**
+- [x] **Read context:** Load MEMORY.md (positioning), load existing listing copy if any
+- [x] **Listing Audit Mode:**
   - If developer has an existing listing, audit each element against best practices
   - Score each element: title utilization, keyword coverage, description structure, visual assets
   - Provide specific improvement recommendations with priority
-- [ ] **Title Optimizer:**
+- [x] **Title Optimizer:**
   - Show 30-character constraint visually (character counter)
   - Generate 5-10 title options incorporating primary keyword
   - Evaluate keyword density vs. readability tradeoff
-- [ ] **Subtitle Optimizer:**
+- [x] **Subtitle Optimizer:**
   - 62-character constraint
   - Secondary keywords not in title
   - Generate options
-- [ ] **Keyword Research:**
+- [x] **Keyword Research:**
   - Guide through Shopify search autocomplete method
   - Analyze competitor keyword strategies
   - Prioritize 20 search terms by estimated volume
-  - Track keyword rankings over time in `marketing/app-listing/keywords.md`
-- [ ] **Description Writer:**
+  - Track keyword rankings over time in `marketing/apps/{slug}/keywords.md`
+- [x] **Description Writer:**
   - PAS (Problem-Agitate-Solution) structure for above-fold
   - Full description for below-fold (for the 2% who click "more")
   - Include social proof elements (review quotes, install count, merchant logos)
   - Generate multiple versions for A/B testing
-- [ ] **Visual Asset Strategy:**
+- [x] **Visual Asset Strategy:**
   - Screenshot planning (6 slots, first 3 most critical)
   - Annotated screenshot recommendations
   - Video storyboard (30-60s, show value immediately)
   - Interactive demo planning
-- [ ] **Changelog Tracking:**
+- [x] **Changelog Tracking:**
   - Record every listing change with date, before/after metrics
   - Analyze which changes moved the needle
-  - Output to `marketing/app-listing/changelog.md`
+  - Output to `marketing/apps/{slug}/listing.md` changelog table
 
 #### 4.2 Reference Integration
-- [ ] Skill reads `references/shopify-aso-guide.md` for all constraints and best practices
-- [ ] Skill reads `references/funnel-benchmarks.md` for conversion rate context
-- [ ] Provides benchmark comparisons: "Your install rate of X% is [above/below] the 20% average"
+- [x] Skill reads `references/shopify-aso-guide.md` for all constraints and best practices
+- [x] Skill reads `references/funnel-benchmarks.md` for conversion rate context
+- [x] Provides benchmark comparisons: "Your install rate of X% is [above/below] the 20% average"
 
 ### Success Criteria
-- [ ] Developer has optimized listing copy with character counts validated
-- [ ] 20 search terms prioritized by estimated volume
-- [ ] Description follows PAS/AIDA framework
-- [ ] Visual asset plan created
-- [ ] Listing changelog started for tracking optimization experiments
+- [x] Developer has optimized listing copy with character counts validated
+- [x] 20 search terms prioritized by estimated volume
+- [x] Description follows PAS/AIDA framework
+- [x] Visual asset plan created
+- [x] Listing changelog started for tracking optimization experiments
 
 ---
 
