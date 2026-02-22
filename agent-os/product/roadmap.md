@@ -16,7 +16,7 @@
 2. [Architecture & Plugin Structure](#architecture--plugin-structure)
 3. [Phase 1: Plugin Scaffold & Core Infrastructure](#phase-1-plugin-scaffold--core-infrastructure) ✅ COMPLETE
 4. [Phase 1.5: Multi-App Portfolio Architecture Migration](#phase-15-multi-app-portfolio-architecture-migration) ✅ COMPLETE
-5. [Phase 2: Initialization & Onboarding Skill](#phase-2-initialization--onboarding-skill)
+5. [Phase 2: Initialization & Onboarding Skill](#phase-2-initialization--onboarding-skill) ✅ COMPLETE
 6. [Phase 3: Positioning & ICP Skills](#phase-3-positioning--icp-skills)
 7. [Phase 4: App Store Optimization Skill](#phase-4-app-store-optimization-skill)
 8. [Phase 5: Outreach & Cold Email Skill](#phase-5-outreach--cold-email-skill)
@@ -1336,18 +1336,18 @@ description: >
 #### 2.1 Init Skill Logic
 The skill should follow this workflow:
 
-- [ ] **Step 1: Check if `marketing/` directory exists**
+- [x] **Step 1: Check if `marketing/` directory exists**
   - If yes: Read MEMORY.md and STATUS.md, check `marketing/apps/` for registered apps
     - If user says "add app": proceed to Step 2b to add a new app to existing portfolio
     - Otherwise: present current state, ask what the developer wants to work on
   - If no: Proceed with full initialization
 
-- [ ] **Step 2a: Gather portfolio information** (first-time init only)
+- [x] **Step 2a: Gather portfolio information** (first-time init only)
   - Brand name (e.g., "Mentilead")
   - How many Shopify apps? (just one / multiple)
   - Monthly marketing budget ($0-200, $500-1000, $1000+)
 
-- [ ] **Step 2b: Gather app information** (conversational, for each app)
+- [x] **Step 2b: Gather app information** (conversational, for each app)
   - App name
   - App slug (auto-generated from name, e.g., "B2B Onboard" → "b2b-onboard")
   - One-line description (what does it do?)
@@ -1361,7 +1361,7 @@ The skill should follow this workflow:
   - Top 1-3 competitors
   - For multi-app: repeat for each app (or allow "add more later")
 
-- [ ] **Step 3: Create directory structure**
+- [x] **Step 3: Create directory structure**
   - Create portfolio-level directories: `marketing/positioning/`, `marketing/partnerships/`, `marketing/content/`, `marketing/outreach/`, `marketing/experiments/`, `marketing/metrics/`, `marketing/logs/`
   - Create `marketing/apps/{slug}/` for each app with: `app.md`, `listing.md`, `keywords.md`, `positioning.md`, `funnel.md`, `reviews.md`, `experiments/`
   - Populate portfolio MEMORY.md with brand info and app list
@@ -1371,30 +1371,30 @@ The skill should follow this workflow:
   - Set appropriate targets based on current phase
   - Create first session log entry
 
-- [ ] **Step 4: Quick positioning assessment**
+- [x] **Step 4: Quick positioning assessment**
   - Based on gathered information, provide a brief assessment:
     - Where the app fits in the competitive landscape
     - Initial ICP hypothesis
     - 3 recommended first actions based on current phase
   - Write assessment to `marketing/positioning/positioning.md`
 
-- [ ] **Step 5: Recommend next skill to use**
+- [x] **Step 5: Recommend next skill to use**
   - Pre-launch → Positioning skill
   - Beta → Outreach skill + Review skill
   - Launched (few reviews) → ASO skill + Review skill
   - Growing → Experiment Engine + Content Strategy
 
 #### 2.2 Re-initialization Safety
-- [ ] If `marketing/` exists, NEVER overwrite without explicit confirmation
-- [ ] Offer to update MEMORY.md with new information instead
-- [ ] Offer to reset specific sections (e.g., "reset experiments" clears experiments/ but keeps positioning/)
+- [x] If `marketing/` exists, NEVER overwrite without explicit confirmation
+- [x] Offer to update MEMORY.md with new information instead
+- [x] Offer to reset specific sections (e.g., "reset experiments" clears experiments/ but keeps positioning/)
 
 ### Success Criteria
-- [ ] Running the init skill on a fresh project creates the full directory structure
-- [ ] MEMORY.md is populated with app-specific information
-- [ ] STATUS.md shows correct current phase and targets
-- [ ] Developer receives actionable first steps within 2 minutes
-- [ ] Re-running on existing project doesn't destroy data
+- [x] Running the init skill on a fresh project creates the full directory structure
+- [x] MEMORY.md is populated with app-specific information
+- [x] STATUS.md shows correct current phase and targets
+- [x] Developer receives actionable first steps within 2 minutes
+- [x] Re-running on existing project doesn't destroy data
 
 ---
 
