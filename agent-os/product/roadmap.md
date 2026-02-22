@@ -19,8 +19,8 @@
 5. [Phase 2: Initialization & Onboarding Skill](#phase-2-initialization--onboarding-skill) ✅ COMPLETE
 6. [Phase 3: Positioning & ICP Skills](#phase-3-positioning--icp-skills) ✅ COMPLETE
 7. [Phase 3.5: App Idea Validator Skill](#phase-35-app-idea-validator-skill) ✅ COMPLETE
-8. [Phase 4: App Store Optimization Skill](#phase-4-app-store-optimization-skill)
-9. [Phase 5: Outreach & Cold Email Skill](#phase-5-outreach--cold-email-skill)
+8. [Phase 4: App Store Optimization Skill](#phase-4-app-store-optimization-skill) ✅ COMPLETE
+9. [Phase 5: Outreach & Cold Email Skill](#phase-5-outreach--cold-email-skill) ✅ COMPLETE
 10. [Phase 6: Experiment Engine Skill](#phase-6-experiment-engine-skill)
 11. [Phase 7: Content Strategy Skill](#phase-7-content-strategy-skill)
 12. [Phase 8: Review & Social Proof Skill](#phase-8-review--social-proof-skill)
@@ -1787,39 +1787,39 @@ description: >
 ### Tasks
 
 #### 5.1 Outreach Skill Workflow
-- [ ] **Read context:** Load MEMORY.md (ICP, positioning), load existing outreach data
-- [ ] **Segment Builder:**
+- [x] **Read context:** Load MEMORY.md (ICP, positioning), load existing outreach data
+- [x] **Segment Builder:**
   - Help identify high-conversion segments (competitor uninstalls = 15-25% vs random 1-2%)
   - Map segments to research tools (StoreCensus, BuiltWith, manual)
   - Define qualification criteria for each segment
   - Output to `marketing/outreach/targets.md`
-- [ ] **Template Generator:**
+- [x] **Template Generator:**
   - Generate email sequences (3 emails max, 3-5 days apart)
   - Email 1: No links, pure value, under 100 words, personalized
   - Email 2: Light follow-up, add specific insight
   - Email 3: Final touch, include app link
   - Create variants for different segments (competitor migration, problem-first, insight-first)
   - Output to `marketing/outreach/templates.md`
-- [ ] **Campaign Builder:**
+- [x] **Campaign Builder:**
   - Create campaign files from template in `marketing/outreach/campaigns/`
   - Set target volumes and timeline
   - Define success criteria (reply rate, install rate)
-- [ ] **Results Tracker:**
+- [x] **Results Tracker:**
   - Log emails sent, opens, replies, installs per campaign
   - Calculate conversion rates by segment and template variant
   - Identify winning templates and segments
   - Update MEMORY.md with outreach learnings
 
 #### 5.2 Reference Integration
-- [ ] Skill reads `references/outreach-playbook.md` for best practices
-- [ ] Enforces rules: max 100 words, no links in first email, max 3 email sequence
-- [ ] Warns about common mistakes (generic templates, wrong targeting)
+- [x] Skill reads `references/outreach-playbook.md` for best practices
+- [x] Enforces rules: max 100 words, no links in first email, max 3 email sequence
+- [x] Warns about common mistakes (generic templates, wrong targeting)
 
 ### Success Criteria
-- [ ] At least one target segment defined with qualification criteria
-- [ ] 3-email sequence generated per segment
-- [ ] Campaign tracking template created
-- [ ] Outreach rules enforced (word count, link policy, sequence length)
+- [x] At least one target segment defined with qualification criteria
+- [x] 3-email sequence generated per segment
+- [x] Campaign tracking template created
+- [x] Outreach rules enforced (word count, link policy, sequence length)
 
 ---
 
