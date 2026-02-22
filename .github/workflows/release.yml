@@ -1,0 +1,76 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run validation
+        run: .github/scripts/validate.sh
+
+      - name: Verify version matches tag
+        run: |
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          PLUGIN_VERSION=$(jq -r '.version' .claude-plugin/plugin.json)
+          echo "Tag version:    $TAG_VERSION"
+          echo "Plugin version: $PLUGIN_VERSION"
+          if [ "$TAG_VERSION" != "$PLUGIN_VERSION" ]; then
+            echo "FAIL: Tag $GITHUB_REF_NAME does not match plugin.json version $PLUGIN_VERSION"
+            exit 1
+          fi
+          echo "Version match confirmed."
+
+      - name: Generate changelog
+        id: changelog
+        run: |
+          PREV_TAG=$(git tag --sort=-v:refname | grep '^v' | sed -n '2p')
+          if [ -n "$PREV_TAG" ]; then
+            echo "Generating changelog from $PREV_TAG to $GITHUB_REF_NAME"
+            CHANGELOG=$(git log --pretty=format:"- %s" "$PREV_TAG".."$GITHUB_REF_NAME" -- | grep -v 'Co-Authored-By')
+          else
+            echo "First release — full history"
+            CHANGELOG=$(git log --pretty=format:"- %s" | grep -v 'Co-Authored-By')
+          fi
+          {
+            echo 'body<<CHANGELOG_EOF'
+            echo "$CHANGELOG"
+            echo 'CHANGELOG_EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Create release zip
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          zip -r "mentilead-growthOS-${VERSION}.zip" . \
+            -x 'agent-os/*' \
+            -x '.claude/*' \
+            -x '.git/*' \
+            -x '.github/*' \
+            -x '.gitignore'
+
+      - name: Determine pre-release
+        id: prerelease
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          if [[ "$VERSION" == 0.* ]]; then
+            echo "is_prerelease=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "is_prerelease=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Mentilead GrowthOS ${{ github.ref_name }}
+          body: ${{ steps.changelog.outputs.body }}
+          files: mentilead-growthOS-*.zip
+          prerelease: ${{ steps.prerelease.outputs.is_prerelease == 'true' }}
