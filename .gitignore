@@ -14,3 +14,6 @@
 
 # User marketing data (created by the plugin in user projects, not in this repo)
 marketing/
+
+# Personal launch tracking
+LAUNCH_CHECKLIST.md

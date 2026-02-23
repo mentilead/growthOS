@@ -1,6 +1,6 @@
 # Mentilead GrowthOS
 
-[![Version](https://img.shields.io/badge/version-0.8.0-blue)](https://github.com/mentilead/growthOS/releases)
+[![Version](https://img.shields.io/badge/version-0.9.0-blue)](https://github.com/mentilead/growthOS/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-blueviolet)](https://claude.com/claude-code)
 [![Shopify](https://img.shields.io/badge/Shopify-App_Marketing-96bf48?logo=shopify&logoColor=white)](https://apps.shopify.com)
@@ -10,6 +10,8 @@
 A Claude Code plugin that turns your local filesystem into a structured marketing operating system for Shopify app developers.
 
 GrowthOS guides you through the full marketing lifecycle — from positioning and ICP definition through app store optimization, outreach, and scaling — using local markdown files as persistent state.
+
+<!-- TODO: Add GIF demo showing init → status dashboard → experiment creation -->
 
 ## Why This Exists
 
@@ -32,6 +34,14 @@ This plugin encodes proven Shopify marketing methodology into a structured, repe
 | **Partnerships** | Ready | Build partnership channels with complementary app discovery, agency outreach, expert partnerships, and pipeline tracking |
 | **Metrics Dashboard** | Ready | Track funnel metrics, compare against Shopify benchmarks, identify bottlenecks, and analyze channel attribution |
 | **Weekly Review** | Ready | Structured weekly review ritual with metrics synthesis, experiment check-ins, channel performance, learnings capture, priority planning, and burnout-prevention mood check |
+
+## Commands
+
+| Command | What It Does |
+|---------|-------------|
+| `/growthOS-status` | Show current marketing dashboard with key metrics, active experiments, priorities, and health indicators |
+| `/growthOS-next` | Recommend the next highest-impact marketing action based on current phase, metrics, and recent activity |
+| `/growthOS-review` | Check when your last weekly review was and get a reminder if it's time for another one |
 
 ## Install
 
@@ -82,6 +92,92 @@ After installing, just tell Claude what you need:
 - *"Set up my marketing workspace"* — starts initialization
 
 GrowthOS creates a `marketing/` directory in your project with structured markdown files that track your entire marketing strategy. Everything is human-readable and git-trackable.
+
+## Skills Guide
+
+### Init
+**When to use:** First time setup, or when adding a new app to your portfolio.
+**Example:** *"Set up GrowthOS for my Shopify app"*
+Creates the `marketing/` directory structure with portfolio-level and per-app state. Supports single-app and multi-app portfolios.
+
+### Positioning
+**When to use:** Before any marketing — you need to know who you're targeting and why they should care.
+**Example:** *"Help me define my ideal customer profile"*
+Guides through ICP definition, Jobs-to-be-Done research, competitive analysis, and positioning statement creation using April Dunford's framework.
+**Next:** ASO Optimizer (your positioning feeds directly into listing copy)
+
+### Idea Validator
+**When to use:** Before building a new app, to validate demand and competitive landscape.
+**Example:** *"Should I build an inventory management app for Shopify?"*
+Analyzes competitive landscape, identifies underserved merchants, maps demand signals, and produces a go/no-go recommendation with evidence.
+
+### ASO Optimizer
+**When to use:** When creating or improving your App Store listing.
+**Example:** *"Optimize my app store listing for more installs"*
+Helps with app title (30 chars), subtitle (62 chars), keywords (20 terms), description copy, screenshot strategy, and demo video planning.
+**Requires:** Positioning (for ICP-aligned copy and keyword targeting)
+
+### Outreach
+**When to use:** When you need direct merchant acquisition beyond organic search.
+**Example:** *"Build an outreach campaign targeting merchants who uninstalled my competitor"*
+Creates personalized email sequences, identifies target merchant segments (competitor uninstalls convert at 15-25%), and tracks campaign results.
+**Requires:** Positioning (for segment targeting and messaging)
+
+### Experiment Engine
+**When to use:** When you want to systematically test marketing ideas.
+**Example:** *"I want to test whether comparison blog posts drive more installs"*
+ICE-scored experiment management with hypothesis tracking, backlog prioritization, and results analysis. Enforces a 3-concurrent-experiment limit to maintain focus.
+**Works with:** All other skills — experiments can test any channel or tactic
+
+### Content Strategy
+**When to use:** When planning blog posts, comparison articles, or SEO content.
+**Example:** *"Help me plan content for the next month"*
+Generates content ideas mapped to funnel stages, creates a content calendar, plans distribution across channels, and produces detailed content briefs.
+**Requires:** Positioning (for topic relevance and audience alignment)
+
+### Review Manager
+**When to use:** When you need more reviews or need to respond to existing ones.
+**Example:** *"Help me build a review acquisition strategy"*
+Timing triggers for review requests, Shopify policy compliance checks, response templates for positive/negative/feature-request reviews, and milestone tracking toward the 20-60 review threshold for organic discovery.
+**Works with:** Metrics Dashboard (review count is a key funnel metric)
+
+### Partnerships
+**When to use:** When you want to grow through complementary apps, agencies, or experts.
+**Example:** *"Find apps that would be good cross-promotion partners"*
+Identifies complementary apps, agencies, and industry experts. Manages outreach pipeline with follow-up cadence and tracks partnership value over time.
+
+### Metrics Dashboard
+**When to use:** When updating weekly metrics or analyzing funnel performance.
+**Example:** *"Update my metrics for this week"*
+Tracks views, installs, activations, trials, paid conversions, and retention. Compares against Shopify benchmarks, identifies bottlenecks, and recommends optimizations.
+**Works with:** Weekly Review (metrics feed into the review ritual)
+
+### Weekly Review
+**When to use:** Every week — builds the habit of consistent marketing improvement.
+**Example:** *"Let's do my weekly marketing review"*
+Structured ritual covering metrics synthesis, experiment check-ins, channel performance, learnings capture, and priority planning. Includes a mood check for burnout prevention.
+**Requires:** At least one week of activity to review
+
+## Recommended Workflow
+
+### Week 1-2: Foundation
+1. **Init** — Set up your marketing workspace
+2. **Positioning** — Define your ICP, Jobs-to-be-Done, and positioning statement
+3. **ASO Optimizer** — Optimize your App Store listing with positioning-aligned copy
+
+### Week 3-4: Acquisition
+4. **Outreach** — Build your first cold email campaign targeting high-converting segments
+5. **Review Manager** — Set up review acquisition triggers and response templates
+
+### Month 2+: Growth
+6. **Experiment Engine** — Start testing marketing hypotheses systematically
+7. **Content Strategy** — Plan SEO content that compounds over time
+8. **Partnerships** — Build complementary app and agency relationships
+
+### Ongoing
+- **Weekly Review** — Every week, review metrics, experiments, and plan next priorities
+- **Metrics Dashboard** — Update funnel metrics weekly to track progress against benchmarks
+- `/growthOS-next` — Anytime you're unsure what to work on
 
 ## How It Works
 
@@ -141,6 +237,16 @@ All benchmarks and constraints come from built-in reference files that the skill
 ## Multi-App Support
 
 GrowthOS works for both single apps and multi-app portfolios. If you have multiple Shopify apps, each gets its own workspace under `marketing/apps/{slug}/` while sharing portfolio-level positioning and outreach data.
+
+## Contributing
+
+We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add new skills, improve reference data, or report issues.
+
+## Built With
+
+Built by [Mentilead](https://github.com/mentilead) for the Shopify developer community.
+
+GrowthOS is free and open-source because we believe every Shopify app developer deserves access to a structured marketing system — not just those who can afford consultants or courses.
 
 ## Requirements
 
