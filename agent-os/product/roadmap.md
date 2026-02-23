@@ -1973,33 +1973,33 @@ description: >
 ### Tasks
 
 #### 8.1 Review Manager Workflow
-- [ ] **Strategy Builder:**
+- [x] **Strategy Builder:**
   - Review acquisition timeline based on current user count
   - Optimal ask timing: Day 3, first value moment, Day 30, after support resolution, after feature shipped
   - Calculate expected reviews: users ÷ 33-100 = expected reviews
   - Set milestone targets: 5 → 10 → 20 → 50 reviews
   - Output to `marketing/reviews/strategy.md`
-- [ ] **Policy Compliance:**
+- [x] **Policy Compliance:**
   - NEVER ask during: onboarding, free trial, with incentives
   - Shopify will remove apps that violate review policies
   - App Bridge Reviews API for in-product requests
   - Warn about explicit review exchange (violates Shopify terms)
-- [ ] **Response Templates:**
+- [x] **Response Templates:**
   - Positive review response (specific thank you)
   - Negative review - constructive (acknowledge, address, offer resolution)
   - Negative review - unreasonable (stay professional, focus on facts)
   - ALWAYS respond to every review (signals active maintenance)
   - Output to `marketing/reviews/responses.md`
-- [ ] **Impact Tracking:**
+- [x] **Impact Tracking:**
   - Track review count, average rating, review sentiment over time
   - Alert when negative review posted (one 1-star can cut installs in half)
   - Recommend review velocity needed for organic discovery threshold (20-60 reviews)
 
 ### Success Criteria
-- [ ] Review strategy document with timing triggers
-- [ ] Response templates for all scenarios
-- [ ] Compliance rules enforced (no incentivized reviews)
-- [ ] Review milestones set and trackable
+- [x] Review strategy document with timing triggers
+- [x] Response templates for all scenarios
+- [x] Compliance rules enforced (no incentivized reviews)
+- [x] Review milestones set and trackable
 
 ---
 

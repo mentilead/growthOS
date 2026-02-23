@@ -1,6 +1,6 @@
 # Mentilead GrowthOS
 
-[![Version](https://img.shields.io/badge/version-0.4.0-blue)](https://github.com/mentilead/growthOS/releases)
+[![Version](https://img.shields.io/badge/version-0.5.0-blue)](https://github.com/mentilead/growthOS/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-blueviolet)](https://claude.com/claude-code)
 [![Shopify](https://img.shields.io/badge/Shopify-App_Marketing-96bf48?logo=shopify&logoColor=white)](https://apps.shopify.com)
@@ -28,7 +28,7 @@ This plugin encodes proven Shopify marketing methodology into a structured, repe
 | **Outreach** | Ready | Build cold email campaigns with segment targeting and template generation |
 | **Experiment Engine** | Ready | ICE-scored experiment management with hypothesis tracking, backlog prioritization, and results analysis |
 | **Content Strategy** | Ready | Plan content marketing with idea generation, calendar building, distribution planning, and content briefs |
-| Review Manager | Coming soon | Review acquisition and social proof |
+| **Review Manager** | Ready | Build review acquisition strategy with timing triggers, Shopify policy compliance, response templates, and impact tracking |
 | Partnerships | Coming soon | Partnership and channel development |
 | Metrics Dashboard | Coming soon | Funnel metrics and KPI tracking |
 | Weekly Review | Coming soon | Weekly review and advisory |
@@ -72,6 +72,7 @@ After installing, just tell Claude what you need:
 - *"Help me build an outreach campaign"* — starts the outreach skill
 - *"I want to run a marketing experiment"* — starts the experiment engine
 - *"Help me plan blog content for my app"* — starts the content strategy skill
+- *"Help me get more reviews for my app"* — starts the review manager
 - *"Set up my marketing workspace"* — starts initialization
 
 GrowthOS creates a `marketing/` directory in your project with structured markdown files that track your entire marketing strategy. Everything is human-readable and git-trackable.
@@ -104,6 +105,9 @@ marketing/
     ideas.md             # Content ideas backlog
     strategy.md          # Calendar and distribution plans
     briefs/              # Individual content briefs
+  reviews/
+    strategy.md          # Review acquisition strategy and compliance
+    responses.md         # Response templates and response log
   logs/                  # Daily session logs
 ```
 
