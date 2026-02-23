@@ -1,6 +1,6 @@
 # Mentilead GrowthOS
 
-[![Version](https://img.shields.io/badge/version-0.3.0-blue)](https://github.com/mentilead/growthOS/releases)
+[![Version](https://img.shields.io/badge/version-0.4.0-blue)](https://github.com/mentilead/growthOS/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-blueviolet)](https://claude.com/claude-code)
 [![Shopify](https://img.shields.io/badge/Shopify-App_Marketing-96bf48?logo=shopify&logoColor=white)](https://apps.shopify.com)
@@ -27,7 +27,7 @@ This plugin encodes proven Shopify marketing methodology into a structured, repe
 | **ASO Optimizer** | Ready | Optimize your App Store listing (title, subtitle, keywords, description, visuals) |
 | **Outreach** | Ready | Build cold email campaigns with segment targeting and template generation |
 | **Experiment Engine** | Ready | ICE-scored experiment management with hypothesis tracking, backlog prioritization, and results analysis |
-| Content Strategy | Coming soon | Content marketing planner |
+| **Content Strategy** | Ready | Plan content marketing with idea generation, calendar building, distribution planning, and content briefs |
 | Review Manager | Coming soon | Review acquisition and social proof |
 | Partnerships | Coming soon | Partnership and channel development |
 | Metrics Dashboard | Coming soon | Funnel metrics and KPI tracking |
@@ -71,6 +71,7 @@ After installing, just tell Claude what you need:
 - *"I need to validate an app idea"* — starts the idea validator
 - *"Help me build an outreach campaign"* — starts the outreach skill
 - *"I want to run a marketing experiment"* — starts the experiment engine
+- *"Help me plan blog content for my app"* — starts the content strategy skill
 - *"Set up my marketing workspace"* — starts initialization
 
 GrowthOS creates a `marketing/` directory in your project with structured markdown files that track your entire marketing strategy. Everything is human-readable and git-trackable.
@@ -99,6 +100,10 @@ marketing/
   experiments/
     backlog.md           # ICE-scored experiment queue
     exp-001-*.md         # Individual experiment files
+  content/
+    ideas.md             # Content ideas backlog
+    strategy.md          # Calendar and distribution plans
+    briefs/              # Individual content briefs
   logs/                  # Daily session logs
 ```
 
