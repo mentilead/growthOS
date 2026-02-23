@@ -1,7 +1,7 @@
 {
   "name": "mentilead-growth-os",
   "description": "Marketing operating system for Shopify app developers. Guides you from positioning through scaling with structured workflows, experiment tracking, and Shopify-specific best practices — all powered by local markdown files.",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "author": {
     "name": "Mentilead",
     "url": "https://github.com/mentilead"

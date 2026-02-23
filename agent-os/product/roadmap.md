@@ -26,7 +26,7 @@
 12. [Phase 8: Review & Social Proof Skill](#phase-8-review--social-proof-skill) ✅ COMPLETE
 13. [Phase 9: Partnership & Channel Skill](#phase-9-partnership--channel-skill) ✅ COMPLETE
 14. [Phase 10: Metrics Dashboard & Status Commands](#phase-10-metrics-dashboard--status-commands) ✅ COMPLETE
-15. [Phase 11: Weekly Review & Advisory System](#phase-11-weekly-review--advisory-system)
+15. [Phase 11: Weekly Review & Advisory System](#phase-11-weekly-review--advisory-system) ✅ COMPLETE
 16. [Phase 12: Documentation, README & Community Launch](#phase-12-documentation-readme--community-launch)
 17. [Appendix A: File Templates](#appendix-a-file-templates)
 18. [Appendix B: Shopify Marketing Reference Data](#appendix-b-shopify-marketing-reference-data)
@@ -2174,45 +2174,45 @@ description: >
 ### Tasks
 
 #### 11.1 Weekly Review Workflow
-- [ ] **Metrics Review:**
+- [x] **Metrics Review:**
   - Pull latest metrics from `marketing/metrics/funnel.md`
   - Compare to previous week and targets
   - Highlight significant changes (positive and negative)
-- [ ] **Experiment Review:**
+- [x] **Experiment Review:**
   - Check all active experiments in `marketing/experiments/`
   - Prompt for updates on each active experiment
   - Flag experiments past their end date
   - Suggest new experiments based on learnings
-- [ ] **Channel Review:**
+- [x] **Channel Review:**
   - For each active channel, review performance
   - Identify channels to double down on vs. cut
-- [ ] **Learnings Synthesis:**
+- [x] **Learnings Synthesis:**
   - What worked? What didn't? What surprised you?
   - Update MEMORY.md "What We've Learned" section
   - Update "Channels That Work" and "Channels That Don't Work"
-- [ ] **Next Week Planning:**
+- [x] **Next Week Planning:**
   - Set 3 priorities for next week (aligned with biggest bottleneck)
   - Update STATUS.md with new priorities
   - Create next week's experiment (if backlog has items)
-- [ ] **Mood Check:**
+- [x] **Mood Check:**
   - Ask about energy level and satisfaction
   - If signs of burnout: suggest reducing experiment count, focusing on highest-ROI channel only
   - Remind: "Marketing is a marathon, not a sprint"
-- [ ] **Create weekly review file:**
+- [x] **Create weekly review file:**
   - Output to `marketing/metrics/weekly/YYYY-MM-DD.md` using weekly review template
   - Append session log entry
 
 #### 11.2 Slash Command: `/growthOS-review`
-- [ ] Triggers the weekly review workflow
-- [ ] Can be run anytime but optimized for weekly cadence
-- [ ] Reminds developer if review hasn't been done in 7+ days
+- [x] Triggers the weekly review workflow
+- [x] Can be run anytime but optimized for weekly cadence
+- [x] Reminds developer if review hasn't been done in 7+ days
 
 ### Success Criteria
-- [ ] Weekly review covers all areas (metrics, experiments, channels, learnings)
-- [ ] MEMORY.md updated with new learnings after each review
-- [ ] STATUS.md updated with next week's priorities
-- [ ] Mood check included (burnout prevention)
-- [ ] Historical weekly reviews accumulate for trend analysis
+- [x] Weekly review covers all areas (metrics, experiments, channels, learnings)
+- [x] MEMORY.md updated with new learnings after each review
+- [x] STATUS.md updated with next week's priorities
+- [x] Mood check included (burnout prevention)
+- [x] Historical weekly reviews accumulate for trend analysis
 
 ---
 
