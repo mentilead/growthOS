@@ -23,8 +23,8 @@
 9. [Phase 5: Outreach & Cold Email Skill](#phase-5-outreach--cold-email-skill) ✅ COMPLETE
 10. [Phase 6: Experiment Engine Skill](#phase-6-experiment-engine-skill) ✅ COMPLETE
 11. [Phase 7: Content Strategy Skill](#phase-7-content-strategy-skill) ✅ COMPLETE
-12. [Phase 8: Review & Social Proof Skill](#phase-8-review--social-proof-skill)
-13. [Phase 9: Partnership & Channel Skill](#phase-9-partnership--channel-skill)
+12. [Phase 8: Review & Social Proof Skill](#phase-8-review--social-proof-skill) ✅ COMPLETE
+13. [Phase 9: Partnership & Channel Skill](#phase-9-partnership--channel-skill) ✅ COMPLETE
 14. [Phase 10: Metrics Dashboard & Status Commands](#phase-10-metrics-dashboard--status-commands)
 15. [Phase 11: Weekly Review & Advisory System](#phase-11-weekly-review--advisory-system)
 16. [Phase 12: Documentation, README & Community Launch](#phase-12-documentation-readme--community-launch)
@@ -2027,31 +2027,31 @@ description: >
 ### Tasks
 
 #### 9.1 Partnership Skill Workflow
-- [ ] **Partner Discovery:**
+- [x] **Partner Discovery:**
   - Identify complementary (not competing) apps in the same merchant ecosystem
   - Research Shopify agencies that serve the developer's target ICP
   - Find industry experts: course creators, YouTubers, newsletter writers
   - Score each prospect: audience overlap, brand alignment, effort, expected value
   - Output to `marketing/partnerships/pipeline.md`
-- [ ] **Outreach Builder:**
+- [x] **Outreach Builder:**
   - Partnership-specific email templates (different from cold outreach)
   - Value proposition for each partner type (mutual recommendations, referral commission, co-marketing)
   - Follow-up cadence for partnership nurturing
   - Output to `marketing/partnerships/templates.md`
-- [ ] **PartnerJam Integration Guidance:**
+- [x] **PartnerJam Integration Guidance:**
   - When to set up formal affiliate/referral program
   - Commission structure recommendations (20-30% for agencies)
   - Tracking and attribution setup
 
 #### 9.2 Reference Integration
-- [ ] Skill reads `references/partnership-playbook.md` for partnership types and evaluation criteria
-- [ ] Provides templates for each partnership type
+- [x] Skill reads `references/partnership-playbook.md` for partnership types and evaluation criteria
+- [x] Provides templates for each partnership type
 
 ### Success Criteria
-- [ ] Partnership pipeline populated with 5+ potential partners
-- [ ] Outreach templates for each partnership type
-- [ ] Partner evaluation scoring system implemented
-- [ ] Pipeline tracker maintained in `marketing/partnerships/pipeline.md`
+- [x] Partnership pipeline populated with 5+ potential partners
+- [x] Outreach templates for each partnership type
+- [x] Partner evaluation scoring system implemented
+- [x] Pipeline tracker maintained in `marketing/partnerships/pipeline.md`
 
 ---
 
