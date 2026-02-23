@@ -1,6 +1,6 @@
 # Mentilead GrowthOS
 
-[![Version](https://img.shields.io/badge/version-0.6.0-blue)](https://github.com/mentilead/growthOS/releases)
+[![Version](https://img.shields.io/badge/version-0.7.0-blue)](https://github.com/mentilead/growthOS/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-blueviolet)](https://claude.com/claude-code)
 [![Shopify](https://img.shields.io/badge/Shopify-App_Marketing-96bf48?logo=shopify&logoColor=white)](https://apps.shopify.com)
@@ -30,7 +30,7 @@ This plugin encodes proven Shopify marketing methodology into a structured, repe
 | **Content Strategy** | Ready | Plan content marketing with idea generation, calendar building, distribution planning, and content briefs |
 | **Review Manager** | Ready | Build review acquisition strategy with timing triggers, Shopify policy compliance, response templates, and impact tracking |
 | **Partnerships** | Ready | Build partnership channels with complementary app discovery, agency outreach, expert partnerships, and pipeline tracking |
-| Metrics Dashboard | Coming soon | Funnel metrics and KPI tracking |
+| **Metrics Dashboard** | Ready | Track funnel metrics, compare against Shopify benchmarks, identify bottlenecks, and analyze channel attribution |
 | Weekly Review | Coming soon | Weekly review and advisory |
 
 ## Install
@@ -74,6 +74,9 @@ After installing, just tell Claude what you need:
 - *"Help me plan blog content for my app"* — starts the content strategy skill
 - *"Help me get more reviews for my app"* — starts the review manager
 - *"Help me find partnership opportunities"* — starts the partnerships skill
+- *"Update my funnel metrics"* — starts the metrics dashboard
+- *"What should I work on next?"* — runs the `/growthOS-next` command
+- *"Show my marketing dashboard"* — runs the `/growthOS-status` command
 - *"Set up my marketing workspace"* — starts initialization
 
 GrowthOS creates a `marketing/` directory in your project with structured markdown files that track your entire marketing strategy. Everything is human-readable and git-trackable.
@@ -112,6 +115,9 @@ marketing/
   partnerships/
     pipeline.md          # Partnership pipeline and prospect tracking
     templates.md         # Outreach templates and follow-up cadence
+  metrics/
+    portfolio.md         # Aggregated portfolio metrics (multi-app)
+    weekly/              # Weekly performance snapshots
   logs/                  # Daily session logs
 ```
 

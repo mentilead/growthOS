@@ -25,7 +25,7 @@
 11. [Phase 7: Content Strategy Skill](#phase-7-content-strategy-skill) ✅ COMPLETE
 12. [Phase 8: Review & Social Proof Skill](#phase-8-review--social-proof-skill) ✅ COMPLETE
 13. [Phase 9: Partnership & Channel Skill](#phase-9-partnership--channel-skill) ✅ COMPLETE
-14. [Phase 10: Metrics Dashboard & Status Commands](#phase-10-metrics-dashboard--status-commands)
+14. [Phase 10: Metrics Dashboard & Status Commands](#phase-10-metrics-dashboard--status-commands) ✅ COMPLETE
 15. [Phase 11: Weekly Review & Advisory System](#phase-11-weekly-review--advisory-system)
 16. [Phase 12: Documentation, README & Community Launch](#phase-12-documentation-readme--community-launch)
 17. [Appendix A: File Templates](#appendix-a-file-templates)
@@ -2075,14 +2075,14 @@ description: >
 ---
 ```
 
-- [ ] **Read STATUS.md and MEMORY.md**
-- [ ] **Display dashboard:**
+- [x] **Read STATUS.md and MEMORY.md**
+- [x] **Display dashboard:**
   - Key metrics table with current vs. target vs. benchmark
   - Active experiments with status
   - This week's priorities
   - Channel performance summary
   - Health indicators: 🟢 on track, 🟡 needs attention, 🔴 critical
-- [ ] **Phase-appropriate advice:**
+- [x] **Phase-appropriate advice:**
   - Pre-launch: "Focus on positioning and listing optimization"
   - Beta: "Focus on getting first 10 installs and reviews"
   - Growth: "Focus on experiment velocity and channel optimization"
@@ -2099,11 +2099,11 @@ description: >
 ---
 ```
 
-- [ ] **Analyze current state:**
+- [x] **Analyze current state:**
   - Read STATUS.md, MEMORY.md, recent experiment results
   - Identify funnel bottleneck (lowest conversion rate stage)
   - Check for stale areas (no activity in 2+ weeks)
-- [ ] **Recommend next action:**
+- [x] **Recommend next action:**
   - Single most impactful thing to do right now
   - Explain why this is the priority
   - Link to the appropriate skill to execute it
@@ -2124,27 +2124,27 @@ description: >
 ---
 ```
 
-- [ ] **Metrics Update Mode:**
+- [x] **Metrics Update Mode:**
   - Prompt for current week's metrics (views, installs, rate, active users, reviews, MRR)
   - Update `marketing/metrics/funnel.md` with new data row
   - Calculate week-over-week trends
   - Compare against benchmarks from `references/funnel-benchmarks.md`
   - Identify the biggest bottleneck (lowest conversion stage)
-- [ ] **Channel Attribution Mode:**
+- [x] **Channel Attribution Mode:**
   - Update channel-level metrics
   - Calculate CAC by channel
   - Identify best-performing and worst-performing channels
-- [ ] **Weekly Snapshot:**
+- [x] **Weekly Snapshot:**
   - Generate weekly snapshot file in `marketing/metrics/weekly/YYYY-MM-DD.md`
   - Include all metrics, trends, and commentary
   - Update STATUS.md with latest numbers
 
 ### Success Criteria
-- [ ] `/growthOS-status` displays comprehensive dashboard in under 3 seconds
-- [ ] `/growthOS-next` provides actionable, context-aware recommendation
-- [ ] Metrics update workflow captures all funnel stages
-- [ ] Benchmarks comparison automatic for every metric update
-- [ ] Weekly snapshots accumulate over time for trend analysis
+- [x] `/growthOS-status` displays comprehensive dashboard in under 3 seconds
+- [x] `/growthOS-next` provides actionable, context-aware recommendation
+- [x] Metrics update workflow captures all funnel stages
+- [x] Benchmarks comparison automatic for every metric update
+- [x] Weekly snapshots accumulate over time for trend analysis
 
 ---
 
