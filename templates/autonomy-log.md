@@ -1,3 +1,8 @@
+---
+template: autonomy-log
+description: Monthly autonomy score tracking template
+---
+
 # Autonomy Score Log
 
 Rolling monthly tracker of autonomous vs. human-required decisions.

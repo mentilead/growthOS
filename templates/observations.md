@@ -1,3 +1,8 @@
+---
+template: observations
+description: Experiment observation log template
+---
+
 # Experiment Observations
 
 Observation log for the Mentilead AI-agent autonomy experiment.

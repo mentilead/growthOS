@@ -239,7 +239,6 @@ If no: skip. No experiment files created.
 ### COO Configuration (Optional)
 
 After creating the directory structure (and optionally the experiment layer), ask:
-
 **"Do you want to configure the COO agent? (recommended)"**
 
 If yes, ask:
@@ -248,11 +247,9 @@ If yes, ask:
 3. "What is the current development phase for each app?" -> write to Development Priorities and set `dev_status: {app}: {phase}` in `marketing/STATUS.md` frontmatter
 4. "What are your publishing commitments?" -> write with defaults (Substack monthly, LinkedIn weekly)
 
-Write answers to `references/coo-config.md` (populate the template).
-Add to `marketing/STATUS.md` frontmatter: `last_coo_briefing: never`
-Create `marketing/experiment/coo-log.md` with header: "# COO Briefing Log\n\nDecisions and follow-ups from daily COO briefings."
+Write answers to `references/coo-config.md`. Add `last_coo_briefing: never` to `marketing/STATUS.md` frontmatter. Create `marketing/experiment/coo-log.md` with header: "# COO Briefing Log\n\nDecisions and follow-ups from daily COO briefings."
 
-If no: skip. User can configure later by telling Claude to set up the COO.
+If no: skip. User can configure later.
 
 ### Files Created Empty (Just Headers or .gitkeep)
 
@@ -443,13 +440,9 @@ marketing/
 Next step: {recommendation from Step 5}
 ```
 
----
-
 ## Add-App Sub-Flow
 
-This condensed flow is used when `marketing/` already exists and the user wants to add a new app to their portfolio.
-
-### Steps
+Used when `marketing/` already exists and the user wants to add a new app.
 
 1. **Gather app info:** Run through Step 2 questions for the new app only (core info, conditional metrics, positioning basics)
 2. **Create app directory:** Create `marketing/apps/{new-slug}/` with all 7 files (app.md, listing.md, keywords.md, positioning.md, funnel.md, reviews.md, experiments/.gitkeep)
@@ -476,11 +469,7 @@ If this is the second app being added (transitioning from single to multi-app):
 - Update MEMORY.md heading from "Marketing Memory — {App Name}" to "Marketing Memory — {Brand Name} Portfolio"
 - Inform the user: "Since you now have multiple apps, your marketing memory and dashboard now show portfolio-level views. Each app's specific files are in marketing/apps/{slug}/."
 
----
-
 ## Field Mapping Table
-
-Quick reference for which gathered data populates which template fields.
 
 | Gathered Data | Template | Field |
 |---------------|----------|-------|
