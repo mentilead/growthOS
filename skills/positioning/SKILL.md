@@ -1,5 +1,5 @@
 ---
-name: growthOS-positioning
+name: positioning
 description: >
   Develop positioning, ICP, and jobs-to-be-done research for a Shopify app.
   Guides through customer segmentation, competitive analysis, JTBD interviews,

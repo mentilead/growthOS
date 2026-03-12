@@ -1,5 +1,5 @@
 ---
-name: growthOS-content
+name: content
 description: >
   Plan and execute content marketing strategy for Shopify app growth.
   Generates content ideas, creates content calendar, maps content to

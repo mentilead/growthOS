@@ -1,5 +1,5 @@
 ---
-name: growthOS-signal
+name: signal
 description: >
   Track signals from the enterprise agentic AI landscape — analyst reports,
   production case studies, failure postmortems, vendor announcements — and
@@ -7,6 +7,7 @@ description: >
   Three modes: log a signal (under 60 seconds), review last 60 days grouped
   by classification, or generate content angles bridging enterprise signals
   to personal experiment findings. Feeds the practitioner's dual perspective.
+argument-hint: "What signal did you see?"
 ---
 
 # GrowthOS Signal Monitor
@@ -23,6 +24,10 @@ Before starting any mode, determine the current state and recommend the next log
 4. Check if `marketing/experiment/signals.md` exists. If not, offer to create it from `templates/signals.md`
 5. Read `experiment_chapter` from STATUS.md frontmatter (default: "Chapter 1: Foundation")
 6. Count signals by classification (`contradiction`, `confirmation`, `unknown-yet`) and count unused signals (where `Used in` is `—`)
+
+### Slash Command Fast-Path
+
+If invoked via slash command, skip the options menu and go directly to Step 1 (Log Signal).
 
 ### Present Options
 

@@ -1,13 +1,16 @@
 ---
-name: growthOS-status
+name: status
 description: >
-  Show current GrowthOS marketing dashboard with key metrics,
-  active experiments, this week's priorities, and health indicators.
+  Show current GrowthOS marketing dashboard with key metrics, active
+  experiments, this week's priorities, channel performance, and health
+  indicators. Read-only display comparing metrics against Shopify
+  benchmarks.
+disable-model-invocation: true
 ---
 
 # GrowthOS Status Dashboard
 
-This command is **read-only** — it displays current marketing state but never writes files.
+This skill is **read-only** — it displays current marketing state but never writes files.
 
 ## Read Current State
 
@@ -79,7 +82,7 @@ This Week's Priorities:
 {priorities from STATUS.md}
 ```
 
-If no priorities set: "No priorities set. Use /growthOS-next for a recommendation."
+If no priorities set: "No priorities set. Use the next skill for a recommendation."
 
 ## Channel Performance
 

@@ -1,5 +1,5 @@
 ---
-name: growthOS-idea-validator
+name: validate
 description: >
   Validate a Shopify app idea before building it. Analyzes competitive
   landscape, identifies underserved merchants from competitor reviews,

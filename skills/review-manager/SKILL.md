@@ -1,5 +1,5 @@
 ---
-name: growthOS-reviews
+name: reviews
 description: >
   Acquire and manage reviews and social proof for Shopify apps.
   Build review acquisition strategy with timing triggers, ensure

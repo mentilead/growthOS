@@ -1,5 +1,5 @@
 ---
-name: growthOS-aso
+name: aso
 description: >
   Optimize a Shopify App Store listing for maximum installs.
   Helps with app title (30 chars), subtitle (62 chars), keywords (20 terms),

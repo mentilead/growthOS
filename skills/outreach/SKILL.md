@@ -1,5 +1,5 @@
 ---
-name: growthOS-outreach
+name: outreach
 description: >
   Build and manage targeted cold outreach campaigns for Shopify app acquisition.
   Creates personalized email sequences, identifies target merchant segments,

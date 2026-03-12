@@ -1,15 +1,18 @@
 ---
-name: growthOS-next
+name: next
 description: >
-  Recommend the next highest-impact marketing action based on
-  current phase, metrics, and recent activity.
+  Recommend the next highest-impact marketing action based on current phase,
+  funnel metrics, and recent activity. Read-only analysis — identifies the
+  single most impactful thing to work on right now. For cross-domain
+  briefings covering all domains simultaneously, use the COO skill instead.
+disable-model-invocation: true
 ---
 
 # GrowthOS Next Action
 
-This command is **read-only** — it analyzes current state and recommends one action but never writes files.
+This skill is **read-only** — it analyzes current state and recommends one action but never writes files.
 
-> **Cross-domain prioritization:** For a briefing that covers marketing, experiment, development, and publishing simultaneously, use `/growthOS-coo` instead. `/growthOS-next` is marketing-only.
+> **Cross-domain prioritization:** For a briefing that covers marketing, experiment, development, and publishing simultaneously, use the COO skill instead. This skill is marketing-only.
 
 ## Read Current State
 
@@ -82,7 +85,7 @@ Next Action: {action_title}
 
 Why: {1-2 sentence explanation of why this is the highest priority}
 Bottleneck/Area: {the funnel stage or marketing area this addresses}
-Run: {skill name or command to execute this action}
+Run: {skill name to execute this action}
 ```
 
 ## Priority Order

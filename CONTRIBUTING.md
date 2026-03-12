@@ -10,7 +10,7 @@ Skills live in `skills/{skill-name}/SKILL.md`. To add one:
 2. Create a `SKILL.md` file with YAML frontmatter:
    ```yaml
    ---
-   name: growthOS-your-skill
+   name: your-skill
    description: >
      One-line description of what this skill does (max 1024 chars).
      Include trigger phrases so Claude knows when to activate it.
@@ -26,21 +26,6 @@ Skills live in `skills/{skill-name}/SKILL.md`. To add one:
 - Description must be max 1024 characters
 - Never overwrite existing user data without confirmation
 - Provide Shopify-specific context where relevant (benchmarks, character limits)
-
-## Adding a New Command
-
-Commands live in `commands/{command-name}.md`. Commands are read-only — they display information but never write files.
-
-1. Create a markdown file in `commands/` with YAML frontmatter:
-   ```yaml
-   ---
-   name: growthOS-your-command
-   description: >
-     What this command shows the user.
-   ---
-   ```
-2. Commands should read from `marketing/` files and synthesize information
-3. Keep commands focused on a single view or recommendation
 
 ## Improving Reference Data
 
@@ -70,7 +55,6 @@ Use the [Feature Request](https://github.com/mentilead/growthOS/issues/new?templ
 2. The plugin is pure markdown — no build step, no dependencies
 3. Key directories:
    - `skills/` — Skill definitions (SKILL.md files)
-   - `commands/` — Slash command definitions
    - `references/` — Shopify marketing data and benchmarks
    - `templates/` — File templates copied during init
 4. Test changes by installing the plugin locally:

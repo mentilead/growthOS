@@ -1,5 +1,5 @@
 ---
-name: growthOS-weekly-review
+name: review
 description: >
   Conduct a structured weekly marketing review for a Shopify app.
   Reviews metrics, experiments, channel performance, and learnings.
@@ -33,6 +33,28 @@ Before starting any mode, determine the current state and recommend the next log
    d. Read `marketing/apps/{slug}/funnel.md` — check if funnel data exists
    e. Optionally read `marketing/apps/{slug}/reviews.md` — review count for context
    f. Optionally read `marketing/partnerships/pipeline.md` — active partnerships
+
+### Review Cadence Display
+
+If 7+ days since last review (or no reviews):
+- Show: "Time for a check-in! Last review: {date} ({days} days ago)"
+- If no reviews: "You haven't done a weekly review yet."
+
+If less than 7 days:
+- Show: "Last review: {date} ({days} days ago). Next due: {date} ({N} days)"
+
+### Last Review Highlights
+
+If a recent review file exists, show:
+- What Worked (verbatim from review)
+- What Didn't Work (verbatim from review)
+- Mood: Energy {N}/5, Satisfaction {N}/5 (from frontmatter)
+
+### Urgent Flags
+
+1. Past-deadline experiments from backlog.md (end_date before today)
+2. Stale areas (14+ days): funnel.md, backlog.md, content/strategy.md, outreach/targets.md, partnerships/pipeline.md
+3. Old metrics: most recent weekly snapshot 14+ days old
 
 ### Present Dashboard
 

@@ -1,5 +1,5 @@
 ---
-name: growthOS-partnerships
+name: partnerships
 description: >
   Build and manage partnership channels for Shopify app growth.
   Identifies complementary apps, agencies, and industry experts.

@@ -15,7 +15,7 @@
         "repo": "mentilead/growthOS"
       },
       "description": "Guides you from positioning through scaling with structured workflows, experiment tracking, and Shopify-specific best practices — all powered by local markdown files. Includes an optional experiment layer for documenting AI-agent autonomy.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "author": {
         "name": "Mentilead"
       },

@@ -1,6 +1,6 @@
 # Mentilead GrowthOS
 
-[![Version](https://img.shields.io/badge/version-1.1.0-blue)](https://github.com/mentilead/growthOS/releases)
+[![Version](https://img.shields.io/badge/version-1.2.0-blue)](https://github.com/mentilead/growthOS/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-blueviolet)](https://claude.com/claude-code)
 [![Shopify](https://img.shields.io/badge/Shopify-App_Marketing-96bf48?logo=shopify&logoColor=white)](https://apps.shopify.com)
@@ -39,19 +39,8 @@ This plugin encodes proven Shopify marketing methodology into a structured, repe
 | **Publisher** | Ready | Draft publication-ready content from experiment observations for Substack, LinkedIn, and Medium |
 | **Signal Monitor** | Ready | Track enterprise AI signals and surface contradictions with experiment findings |
 | **COO** | Ready | Cross-domain operating officer — reads marketing, experiment, development, and publishing state to produce daily prioritized briefings with approval routing |
-
-## Commands
-
-| Command | What It Does |
-|---------|-------------|
-| `/growthOS-status` | Show current marketing dashboard with key metrics, active experiments, priorities, and health indicators |
-| `/growthOS-next` | Recommend the next highest-impact marketing action based on current phase, metrics, and recent activity |
-| `/growthOS-review` | Check when your last weekly review was and get a reminder if it's time for another one |
-| `/growthOS-log` | Fast-path experiment observation capture — log what happened in under 60 seconds |
-| `/growthOS-score` | Show current Autonomy Score with trend, system breakdown, and chapter assessment |
-| `/growthOS-draft` | Synthesize experiment state and route to the publisher for platform-specific drafting |
-| `/growthOS-signal` | Fast-path enterprise AI signal capture — log a signal in under 60 seconds |
-| `/growthOS-coo` | Daily cross-domain briefing — reads all GrowthOS domains, surfaces ranked actions for approval, tracks accountability carry-overs |
+| **Next** | Ready | Recommend the next highest-impact marketing action based on current phase, metrics, and activity |
+| **Status** | Ready | Show current marketing dashboard with key metrics, active experiments, priorities, and health indicators |
 
 ## Install
 
@@ -96,14 +85,14 @@ After installing, just tell Claude what you need:
 - *"Help me find partnership opportunities"* — starts the partnerships skill
 - *"Update my funnel metrics"* — starts the metrics dashboard
 - *"Let's do a weekly review"* — starts the weekly review skill
-- *"What should I work on next?"* — runs the `/growthOS-next` command
-- *"Show my marketing dashboard"* — runs the `/growthOS-status` command
-- *"When was my last review?"* — runs the `/growthOS-review` command
-- *"Log an observation"* — starts the observation logger (or use `/growthOS-log`)
-- *"What's my autonomy score?"* — shows the score (or use `/growthOS-score`)
-- *"I want to draft a post about the experiment"* — starts draft prep (or use `/growthOS-draft`)
-- *"I saw an interesting AI signal"* — starts the signal monitor (or use `/growthOS-signal`)
-- *"What should I work on today?"* — runs the COO briefing (or use `/growthOS-coo`)
+- *"What should I work on next?"* — runs the next skill
+- *"Show my marketing dashboard"* — runs the status skill
+- *"When was my last review?"* — starts the review skill
+- *"Log an observation"* — starts the observation logger
+- *"What's my autonomy score?"* — shows the score
+- *"I want to draft a post about the experiment"* — starts the draft skill
+- *"I saw an interesting AI signal"* — starts the signal monitor
+- *"What should I work on today?"* — runs the COO briefing
 - *"Set up my marketing workspace"* — starts initialization
 
 GrowthOS creates a `marketing/` directory in your project with structured markdown files that track your entire marketing strategy. Everything is human-readable and git-trackable.
@@ -203,6 +192,16 @@ Logs enterprise AI signals and surfaces contradictions with your experiment find
 Cross-domain operating officer that reads marketing health, experiment state, development pipeline, and publishing cadence simultaneously. Produces a ranked briefing of actionable items you approve, skip, or defer. Approved items route directly to the right skill. Tracks carry-overs so nothing falls through the cracks.
 **Works with:** All skills — the COO routes to any skill based on what's most important
 
+### Next
+**When to use:** When you're unsure what marketing task to focus on.
+**Example:** *"What should I work on next?"*
+Analyzes your current phase, funnel metrics, and recent activity to recommend the single highest-impact marketing action. Marketing-only — for cross-domain prioritization, use the COO.
+
+### Status
+**When to use:** When you want a quick overview of your marketing health.
+**Example:** *"Show my marketing dashboard"*
+Displays key metrics, active experiments, priorities, channel performance, and health indicators compared against Shopify benchmarks.
+
 ## The COO Concept
 
 GrowthOS skills are tools. The COO is the judgment layer above them.
@@ -254,7 +253,7 @@ During init, say yes when asked about documenting a public experiment. Or tell C
 ### Ongoing
 - **Weekly Review** — Every week, review metrics, experiments, and plan next priorities
 - **Metrics Dashboard** — Update funnel metrics weekly to track progress against benchmarks
-- `/growthOS-next` — Anytime you're unsure what to work on
+- *"What should I work on?"* — anytime you're unsure
 
 ## How It Works
 

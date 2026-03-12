@@ -1,5 +1,5 @@
 ---
-name: growthOS-experiment
+name: experiment
 description: >
   Manage marketing experiments with ICE scoring for Shopify app growth.
   Create, prioritize, track, and analyze experiments across all marketing

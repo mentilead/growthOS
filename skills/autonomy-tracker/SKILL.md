@@ -1,12 +1,13 @@
 ---
-name: growthOS-autonomy
+name: score
 description: >
   Track and analyze the Autonomy Score — the experiment's primary KPI.
   Measures what percentage of Mentilead operational decisions required no
   human input over a rolling period. Three modes: update decision counts,
-  review the current score with chapter-appropriate context, or analyze
-  trends across months. Use when updating the autonomy log, checking the
-  score, or analyzing decision patterns over time.
+  review the current score with chapter-appropriate context (5-second
+  check), or analyze trends across months. Use when updating the autonomy
+  log, checking the score, or analyzing decision patterns over time.
+disable-model-invocation: true
 ---
 
 # GrowthOS Autonomy Tracker

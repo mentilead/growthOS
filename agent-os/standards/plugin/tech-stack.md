@@ -29,7 +29,6 @@ GrowthOS is a Claude Code plugin composed entirely of markdown files. There is n
 mentilead-growthOS/
 ├── .claude-plugin/plugin.json    # Plugin manifest
 ├── skills/*/SKILL.md             # Markdown skills with YAML frontmatter
-├── commands/*.md                 # Slash commands
 ├── references/*.md               # Static knowledge files
 ├── templates/*.md                # Copied into user's marketing/ dir
 ├── CLAUDE.md                     # Plugin project memory

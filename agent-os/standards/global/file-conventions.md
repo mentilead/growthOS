@@ -24,7 +24,7 @@ Consistent status values per domain:
 ### Directory Naming
 - Use kebab-case for directories: `app-listing/`, `experiment-engine/`
 - User state lives under `marketing/` in the user's project
-- Plugin source directories: `skills/`, `commands/`, `references/`, `templates/`
+- Plugin source directories: `skills/`, `references/`, `templates/`
 
 ### File Naming
 - Use kebab-case for filenames: `funnel-benchmarks.md`, `weekly-review.md`

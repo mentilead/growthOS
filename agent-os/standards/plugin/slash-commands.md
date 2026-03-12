@@ -1,25 +1,7 @@
-## Slash Command Standards
+## Slash Commands (Deprecated)
 
-Slash commands live at `commands/{command-name}.md` and provide quick-access actions.
+Slash commands have been replaced by skills. All former commands are now skills with the same functionality.
 
-### Frontmatter
-```yaml
----
-name: growthOS-{command}
-description: >
-  What the command does. Keep it concise.
----
-```
+See `skill-authoring.md` for the current standard on creating skills.
 
-### Naming Convention
-All commands are prefixed with `growthOS-` to namespace them:
-- `/growthOS-status` — Dashboard view
-- `/growthOS-next` — Recommended next action
-- `/growthOS-experiment` — Quick experiment status
-- `/growthOS-review` — Weekly review trigger
-
-### Design Rules
-- Commands should execute fast — read files, display info, provide recommendations.
-- Commands should not require multi-step interaction. For workflows that need conversation, use a skill instead.
-- Always read `STATUS.md` and `MEMORY.md` for context.
-- Output should be scannable — use tables and short text, not long paragraphs.
+All skills are invocable via `/mentilead-growth-os:{skill-name}`.

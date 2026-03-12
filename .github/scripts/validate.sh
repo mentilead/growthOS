@@ -143,6 +143,18 @@ for skill_file in skills/*/SKILL.md; do
 done
 
 # ─────────────────────────────────────────────
+# 3b. Legacy commands/ directory must not exist
+# ─────────────────────────────────────────────
+echo ""
+echo "=== Legacy Check ==="
+
+if [ -d commands ]; then
+  fail "commands/ directory still exists — commands were migrated to skills in v1.2.0"
+else
+  pass "No legacy commands/ directory"
+fi
+
+# ─────────────────────────────────────────────
 # 4. Template frontmatter validation
 # ─────────────────────────────────────────────
 echo ""

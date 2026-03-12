@@ -1,11 +1,12 @@
 ---
-name: growthOS-observation
+name: log
 description: >
   Capture experiment observations — agent decisions, failures, escalations,
   contradictions between enterprise advice and personal practice, autonomy
   milestones. Three modes: quick capture (under 60 seconds), reflection
   (add depth to recent observations), and review (monthly summary with
   autonomy score). Use when the user wants to log something that happened.
+argument-hint: "What happened?"
 ---
 
 # GrowthOS Observation Logger
@@ -23,6 +24,10 @@ Before starting any mode, determine the current state and recommend the next log
 5. Check if `marketing/experiment/autonomy-log.md` exists. If not, create it from `templates/autonomy-log.md`
 6. Read `experiment_chapter` from STATUS.md frontmatter (default: "Chapter 1: Foundation")
 7. Detect observation type from user's message and route to the right step
+
+### Slash Command Fast-Path
+
+If invoked via slash command, skip the options menu and go directly to Step 1 (Quick Capture).
 
 ### Present Options
 

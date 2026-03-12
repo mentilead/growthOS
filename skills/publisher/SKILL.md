@@ -1,5 +1,5 @@
 ---
-name: growthOS-publish
+name: draft
 description: >
   Draft publication-ready content for the public experiment narrative.
   Synthesizes from the observation log into platform-specific formats:
@@ -27,18 +27,43 @@ Before starting any mode, determine the current state and recommend the next log
 8. Scan observations: count total, count unpublished (entries without `- **Published:** true`), count with reflections (`has_reflection: true` or `Has reflection: true`), count this month
 9. Scan `marketing/experiment/drafts/*.md` for current draft statuses (read frontmatter of each file)
 
-### Present Options
+### Compute State Summary
 
-If the user's intent is not clear from their message, present the dashboard:
+From the gathered files, calculate:
+- **total**: count of `### OBS-` entries in observations.md
+- **unpublished**: entries without `- **Published:** true`
+- **reflected**: entries with `Has reflection: true`
+- **month_count**: entries where date matches current month
+- **score**: current Autonomy Score from autonomy-log.md (latest month row)
+- **trend**: compare current month score to previous month
+- **signal_count**: count of signal entries in signals.md
+- **contradictions**: signals with `type: contradiction`
+- **unused**: signals without `- **Used in:**` field
+
+### Present State + Options
+
+Show the summary before the platform menu:
 
 ```
-Publisher — {experiment_chapter}:
+Draft Prep — {experiment_chapter}:
 
 Observations: {total} ({unpublished} unpublished, {reflected} with reflections)
-This month: {month_count}
+This month: {month_count} observations
+Autonomy Score: {score}% ({trend} vs last month)
+Signals: {signal_count} ({contradictions} contradictions, {unused} unused)
 
 Drafts: {draft_count} draft, {reviewed_count} reviewed, {published_count} published
 
+Best content angles:
+1. {angle from contradiction or high-value observation}
+2. {angle from autonomy score trend if notable}
+3. {angle from enterprise signal contradiction if exists}
+```
+
+Angle priority: contradictions > observations with reflections > failures with high severity > autonomy score movements.
+
+```
+Which platform?
 1. Substack Draft — monthly practitioner journal
 2. LinkedIn Extract — single observation post
 3. Medium Reformat — SEO version of Substack piece

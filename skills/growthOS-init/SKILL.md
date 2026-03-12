@@ -1,5 +1,5 @@
 ---
-name: growthOS-init
+name: init
 description: >
   Initialize Mentilead GrowthOS marketing system for Shopify apps.
   Creates the marketing/ directory structure with portfolio-level and

@@ -1,5 +1,5 @@
 ---
-name: growthOS-metrics
+name: metrics
 description: >
   Track and analyze funnel metrics for a Shopify app.
   Updates weekly metrics, compares against benchmarks,

@@ -1,5 +1,5 @@
 ---
-name: growthOS-coo
+name: coo
 description: >
   Cross-domain operating officer for Mentilead. Reads marketing health,
   experiment state, development pipeline, and publishing cadence
@@ -12,6 +12,18 @@ description: >
 # GrowthOS COO — Cross-Domain Operating Officer
 
 The COO reads everything before producing any output. It never asks the user what's going on — it figures it out from files.
+
+## Repeat Briefing Check
+
+Before starting, read `marketing/STATUS.md` and check the `last_coo_briefing` field.
+
+If `last_coo_briefing` equals today's date:
+- Ask: "You've already run a briefing today. Want a refresh with any new state, or review what's still pending?"
+- If "refresh": run the full skill from Step 0 with fresh state reads
+- If "pending" or "review": skip to Step 1 (carry-overs) and show only unresolved items from today's `marketing/experiment/coo-log.md` entry
+
+If `last_coo_briefing` does not equal today's date or is `never`:
+- Proceed to Step 0.
 
 ---
 
@@ -101,7 +113,7 @@ Generate candidate actions across all domains. Each action has:
 - **One-line description:** Specific, not vague
 - **Why now:** One sentence — time-sensitivity, opportunity cost, or decay risk
 - **Effort:** 10 min / 30 min / 1-2 hrs / half day
-- **Dependency:** Skill or command that handles this (e.g. "-> /growthOS-draft" or "-> publisher skill Step 1")
+- **Dependency:** Skill or command that handles this (e.g. "-> draft skill" or "-> draft skill Step 1")
 - **Approval options:** `[ Approve ]  [ Skip ]  [ Defer ]`
 
 ### Scoring Model (internal, not shown to user)
