@@ -32,10 +32,20 @@ This command intentionally writes files — it is a fast-path to the observation
    - **Significance:** {user's note, or "—"}
    - **Has reflection:** false
    ```
-8. If type is `autonomous-action` or `human-escalation`, update `marketing/experiment/autonomy-log.md`:
-   - Find or create current month's row
-   - Increment the appropriate counter
-   - Recalculate autonomy score: `autonomous / (autonomous + human) * 100`
+8. If type is `autonomous-action`, `human-escalation`, or `agent-failure`, update `marketing/experiment/autonomy-log.md`:
+   - The Monthly Summary table has 7 columns: `Month | Autonomous | Human Escalations | Agent Failures | Total | Score | Notes`
+   - Find or create current month's row (new rows: `| {YYYY-MM} | 0 | 0 | 0 | 0 | 0% | — |`)
+   - Increment the appropriate counter:
+     - `autonomous-action` → Autonomous
+     - `human-escalation` → Human Escalations
+     - `agent-failure` → Agent Failures
+   - Recalculate Total: `autonomous + human_escalations` (agent failures NOT in total)
+   - Recalculate Score: `autonomous / total * 100`
+   - Preserve existing Notes value
+   - Update the System Breakdown section for the current month:
+     - Look for a `### {YYYY-MM}` section under `## System Breakdown`
+     - If no section exists, create one with a table row for this system
+     - If the section exists, find or add a row for the system and increment the appropriate counter
 9. Show the logged entry back to the user:
    ```
    Logged OBS-{NNN}:

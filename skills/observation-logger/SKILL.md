@@ -83,15 +83,38 @@ Append to `marketing/experiment/observations.md`:
 
 ### Update Autonomy Log
 
-If type is `autonomous-action` or `human-escalation`, update `marketing/experiment/autonomy-log.md`:
+If type is `autonomous-action`, `human-escalation`, or `agent-failure`, update `marketing/experiment/autonomy-log.md`:
+
+#### Monthly Summary Table
+
+The Monthly Summary table has 7 columns: `Month | Autonomous | Human Escalations | Agent Failures | Total | Score | Notes`
 
 1. Find the row for the current month (format: `YYYY-MM`)
-2. If no row exists for the current month, append a new row with zeroed counters
+2. If no row exists for the current month, append a new row: `| {YYYY-MM} | 0 | 0 | 0 | 0 | 0% | — |`
 3. Increment the appropriate counter:
-   - `autonomous-action` → increment Autonomous Decisions
-   - `human-escalation` → increment Human Decisions
-4. Recalculate Total: `autonomous + human`
-5. Recalculate Autonomy Score: `autonomous / total * 100` (rounded to nearest integer, format as `{score}%`)
+   - `autonomous-action` → increment Autonomous
+   - `human-escalation` → increment Human Escalations
+   - `agent-failure` → increment Agent Failures
+4. Recalculate Total: `autonomous + human_escalations` (agent failures are NOT part of the total)
+5. Recalculate Score: `autonomous / total * 100` (rounded to nearest integer, format as `{score}%`)
+6. Preserve existing Notes value
+
+#### System Breakdown
+
+After updating the summary row, update the System Breakdown section for the current month:
+
+1. Look for a `### {YYYY-MM}` section under `## System Breakdown`
+2. If no section exists, create one:
+   ```markdown
+   ### {YYYY-MM}
+
+   | System | Autonomous | Escalated | Failures |
+   |--------|-----------|-----------|----------|
+   | {system} | {n} | {n} | {n} |
+   ```
+3. If the section exists, find the row for the `{system}` from this observation
+4. If the system row exists, increment the appropriate counter
+5. If the system row does not exist, append a new row for this system
 
 ### Confirm to User
 
