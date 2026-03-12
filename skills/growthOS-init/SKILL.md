@@ -236,6 +236,24 @@ If yes:
 
 If no: skip. No experiment files created.
 
+### COO Configuration (Optional)
+
+After creating the directory structure (and optionally the experiment layer), ask:
+
+**"Do you want to configure the COO agent? (recommended)"**
+
+If yes, ask:
+1. "How many hours per week do you have for this work?" -> write to `references/coo-config.md` Time Budget
+2. "What are your working days?" -> write to Preferred working days
+3. "What is the current development phase for each app?" -> write to Development Priorities and set `dev_status: {app}: {phase}` in `marketing/STATUS.md` frontmatter
+4. "What are your publishing commitments?" -> write with defaults (Substack monthly, LinkedIn weekly)
+
+Write answers to `references/coo-config.md` (populate the template).
+Add to `marketing/STATUS.md` frontmatter: `last_coo_briefing: never`
+Create `marketing/experiment/coo-log.md` with header: "# COO Briefing Log\n\nDecisions and follow-ups from daily COO briefings."
+
+If no: skip. User can configure later by telling Claude to set up the COO.
+
 ### Files Created Empty (Just Headers or .gitkeep)
 
 These files get placeholder content — they'll be populated by dedicated skills later:
@@ -384,6 +402,8 @@ Create `marketing/logs/{today}.md` where `{today}` is today's date in YYYY-MM-DD
 - **Recommended next step:** {recommended skill from Step 5}
 {if experiment layer enabled:}
 - **Experiment layer:** Enabled — Chapter 1: The Wager
+{if COO configured:}
+- **COO agent:** Configured — {hours}hrs/week, {working_days}
 ```
 
 ### Update STATUS.md
@@ -414,6 +434,8 @@ marketing/
 ├── partnerships/ — Partnership pipeline (empty, ready for Partnerships skill)
 {if experiment layer enabled:}
 ├── experiment/       — Observation log, autonomy tracker, signals, drafts
+{if COO configured:}
+├── references/coo-config.md — COO operational preferences
 └── logs/{today}.md — Today's session log
 
 {Quick positioning assessment from Step 4}

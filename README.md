@@ -1,6 +1,6 @@
 # Mentilead GrowthOS
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/mentilead/growthOS/releases)
+[![Version](https://img.shields.io/badge/version-1.1.0-blue)](https://github.com/mentilead/growthOS/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-blueviolet)](https://claude.com/claude-code)
 [![Shopify](https://img.shields.io/badge/Shopify-App_Marketing-96bf48?logo=shopify&logoColor=white)](https://apps.shopify.com)
@@ -38,6 +38,7 @@ This plugin encodes proven Shopify marketing methodology into a structured, repe
 | **Autonomy Tracker** | Ready | Track the Autonomy Score — the experiment's primary KPI measuring autonomous vs. human-required decisions |
 | **Publisher** | Ready | Draft publication-ready content from experiment observations for Substack, LinkedIn, and Medium |
 | **Signal Monitor** | Ready | Track enterprise AI signals and surface contradictions with experiment findings |
+| **COO** | Ready | Cross-domain operating officer — reads marketing, experiment, development, and publishing state to produce daily prioritized briefings with approval routing |
 
 ## Commands
 
@@ -50,6 +51,7 @@ This plugin encodes proven Shopify marketing methodology into a structured, repe
 | `/growthOS-score` | Show current Autonomy Score with trend, system breakdown, and chapter assessment |
 | `/growthOS-draft` | Synthesize experiment state and route to the publisher for platform-specific drafting |
 | `/growthOS-signal` | Fast-path enterprise AI signal capture — log a signal in under 60 seconds |
+| `/growthOS-coo` | Daily cross-domain briefing — reads all GrowthOS domains, surfaces ranked actions for approval, tracks accountability carry-overs |
 
 ## Install
 
@@ -101,6 +103,7 @@ After installing, just tell Claude what you need:
 - *"What's my autonomy score?"* — shows the score (or use `/growthOS-score`)
 - *"I want to draft a post about the experiment"* — starts draft prep (or use `/growthOS-draft`)
 - *"I saw an interesting AI signal"* — starts the signal monitor (or use `/growthOS-signal`)
+- *"What should I work on today?"* — runs the COO briefing (or use `/growthOS-coo`)
 - *"Set up my marketing workspace"* — starts initialization
 
 GrowthOS creates a `marketing/` directory in your project with structured markdown files that track your entire marketing strategy. Everything is human-readable and git-trackable.
@@ -193,6 +196,24 @@ Synthesizes observations into platform-specific content: Substack monthly journa
 **Example:** *"McKinsey just published a report saying 60% of enterprises will have AI agents by 2027"*
 Logs enterprise AI signals and surfaces contradictions with your experiment findings. Contradictions are the highest-priority content angles for the Publisher.
 **Works with:** Publisher (contradictions become content)
+
+### COO
+**When to use:** Every day, or when you need a strategic overview across all domains.
+**Example:** *"What should I work on today?"*
+Cross-domain operating officer that reads marketing health, experiment state, development pipeline, and publishing cadence simultaneously. Produces a ranked briefing of actionable items you approve, skip, or defer. Approved items route directly to the right skill. Tracks carry-overs so nothing falls through the cracks.
+**Works with:** All skills — the COO routes to any skill based on what's most important
+
+## The COO Concept
+
+GrowthOS skills are tools. The COO is the judgment layer above them.
+
+It reads across all domains simultaneously — marketing metrics, experiment observations, development pipeline, publishing cadence — and makes trade-off decisions between competing priorities. Should you draft a Substack post or fix a dropping install rate? The COO knows both states and recommends the higher-impact action.
+
+The accountability loop is intentional. When you approve an action and don't complete it, the COO surfaces it next session. When you defer something, it comes back on the deferred date. A COO that only tells you good news is useless.
+
+The approval model is deliberate: the COO recommends, you decide, GrowthOS executes. No action runs without your approval. You stay in control of direction and values — the COO handles operational awareness.
+
+Configure it in `references/coo-config.md` to match your actual time constraints and commitments.
 
 ## Experiment Layer
 

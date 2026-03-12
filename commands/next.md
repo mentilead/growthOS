@@ -9,6 +9,8 @@ description: >
 
 This command is **read-only** — it analyzes current state and recommends one action but never writes files.
 
+> **Cross-domain prioritization:** For a briefing that covers marketing, experiment, development, and publishing simultaneously, use `/growthOS-coo` instead. `/growthOS-next` is marketing-only.
+
 ## Read Current State
 
 1. Read `marketing/MEMORY.md` and `marketing/STATUS.md`
