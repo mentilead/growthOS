@@ -43,3 +43,8 @@ When a skill needs to operate on a specific app:
 
 ### Backward Compatibility
 Single-app users never see the `apps/` subdirectory concept. If init detects one app, it creates `marketing/apps/{slug}/` internally but the user experience is identical to a flat structure. The portfolio MEMORY.md and STATUS.md simply have one app listed.
+
+## Experiment Layer
+- Skills producing publishable content MUST read `references/voice.md` before generating any output
+- Skills working on observation logs or narrative synthesis MUST read `references/experiment-thesis.md` before taking action
+- The current experiment chapter is tracked in STATUS.md under the `experiment_chapter` field
