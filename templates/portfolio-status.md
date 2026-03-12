@@ -1,6 +1,7 @@
 ---
 last_updated: YYYY-MM-DD
 current_phase: "pre-launch"
+experiment_chapter: "Chapter 1: Foundation"
 ---
 
 # GrowthOS Portfolio Dashboard
