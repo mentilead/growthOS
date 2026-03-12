@@ -1,6 +1,6 @@
 # Mentilead GrowthOS
 
-[![Version](https://img.shields.io/badge/version-0.9.0-blue)](https://github.com/mentilead/growthOS/releases)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/mentilead/growthOS/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-blueviolet)](https://claude.com/claude-code)
 [![Shopify](https://img.shields.io/badge/Shopify-App_Marketing-96bf48?logo=shopify&logoColor=white)](https://apps.shopify.com)
@@ -34,6 +34,10 @@ This plugin encodes proven Shopify marketing methodology into a structured, repe
 | **Partnerships** | Ready | Build partnership channels with complementary app discovery, agency outreach, expert partnerships, and pipeline tracking |
 | **Metrics Dashboard** | Ready | Track funnel metrics, compare against Shopify benchmarks, identify bottlenecks, and analyze channel attribution |
 | **Weekly Review** | Ready | Structured weekly review ritual with metrics synthesis, experiment check-ins, channel performance, learnings capture, priority planning, and burnout-prevention mood check |
+| **Observation Logger** | Ready | Capture experiment observations — agent decisions, failures, escalations, contradictions, milestones |
+| **Autonomy Tracker** | Ready | Track the Autonomy Score — the experiment's primary KPI measuring autonomous vs. human-required decisions |
+| **Publisher** | Ready | Draft publication-ready content from experiment observations for Substack, LinkedIn, and Medium |
+| **Signal Monitor** | Ready | Track enterprise AI signals and surface contradictions with experiment findings |
 
 ## Commands
 
@@ -42,6 +46,10 @@ This plugin encodes proven Shopify marketing methodology into a structured, repe
 | `/growthOS-status` | Show current marketing dashboard with key metrics, active experiments, priorities, and health indicators |
 | `/growthOS-next` | Recommend the next highest-impact marketing action based on current phase, metrics, and recent activity |
 | `/growthOS-review` | Check when your last weekly review was and get a reminder if it's time for another one |
+| `/growthOS-log` | Fast-path experiment observation capture — log what happened in under 60 seconds |
+| `/growthOS-score` | Show current Autonomy Score with trend, system breakdown, and chapter assessment |
+| `/growthOS-draft` | Synthesize experiment state and route to the publisher for platform-specific drafting |
+| `/growthOS-signal` | Fast-path enterprise AI signal capture — log a signal in under 60 seconds |
 
 ## Install
 
@@ -89,6 +97,10 @@ After installing, just tell Claude what you need:
 - *"What should I work on next?"* — runs the `/growthOS-next` command
 - *"Show my marketing dashboard"* — runs the `/growthOS-status` command
 - *"When was my last review?"* — runs the `/growthOS-review` command
+- *"Log an observation"* — starts the observation logger (or use `/growthOS-log`)
+- *"What's my autonomy score?"* — shows the score (or use `/growthOS-score`)
+- *"I want to draft a post about the experiment"* — starts draft prep (or use `/growthOS-draft`)
+- *"I saw an interesting AI signal"* — starts the signal monitor (or use `/growthOS-signal`)
 - *"Set up my marketing workspace"* — starts initialization
 
 GrowthOS creates a `marketing/` directory in your project with structured markdown files that track your entire marketing strategy. Everything is human-readable and git-trackable.
@@ -158,6 +170,50 @@ Tracks views, installs, activations, trials, paid conversions, and retention. Co
 Structured ritual covering metrics synthesis, experiment check-ins, channel performance, learnings capture, and priority planning. Includes a mood check for burnout prevention.
 **Requires:** At least one week of activity to review
 
+### Observation Logger
+**When to use:** When something notable happens with an AI agent — a decision, failure, escalation, or contradiction.
+**Example:** *"The support agent auto-replied to a merchant complaint without escalating"*
+Captures experiment observations with type classification, severity tagging, and optional reflections that compare enterprise advice to solo reality. Automatically updates the Autonomy Score.
+**Works with:** Autonomy Tracker (score updates), Publisher (observations become content)
+
+### Autonomy Tracker
+**When to use:** When you want to see how autonomous your operations are, or at the end of each month.
+**Example:** *"What's my autonomy score?"*
+Tracks the experiment's primary KPI — the percentage of operational decisions that required no human input. Shows trend over time, system-by-system breakdown, and chapter-level assessment.
+**Works with:** Observation Logger (data source), Publisher (score trends become content)
+
+### Publisher
+**When to use:** When you have enough observations to write about the experiment.
+**Example:** *"I want to draft a Substack post about this month"*
+Synthesizes observations into platform-specific content: Substack monthly journals, LinkedIn single-observation posts, and Medium SEO reformats. Follows the voice guide strictly.
+**Requires:** Observations logged via the Observation Logger
+
+### Signal Monitor
+**When to use:** When you encounter enterprise AI news, reports, or announcements worth tracking.
+**Example:** *"McKinsey just published a report saying 60% of enterprises will have AI agents by 2027"*
+Logs enterprise AI signals and surfaces contradictions with your experiment findings. Contradictions are the highest-priority content angles for the Publisher.
+**Works with:** Publisher (contradictions become content)
+
+## Experiment Layer
+
+GrowthOS includes an optional experiment layer for developers who want to run a portfolio AND document a public experiment simultaneously.
+
+The experiment tracks one core question: *Can one person replace every operational function with AI agents until the only irreplaceable role is holding direction and values?*
+
+This runs on real revenue, real customers, and real consequences — poker without money is a card game.
+
+### Enable It
+
+During init, say yes when asked about documenting a public experiment. Or tell Claude:
+*"I want to document a public experiment about running my company with AI agents"*
+
+### What It Adds
+
+- **Observation logging** — capture agent decisions, failures, and escalations as they happen
+- **Autonomy Score** — the primary KPI measuring autonomous vs. human-required decisions
+- **Signal tracking** — log enterprise AI signals and surface contradictions with your findings
+- **Content publishing** — draft Substack, LinkedIn, and Medium posts from your observations
+
 ## Recommended Workflow
 
 ### Week 1-2: Foundation
@@ -203,6 +259,11 @@ marketing/
   experiments/
     backlog.md           # ICE-scored experiment queue
     exp-001-*.md         # Individual experiment files
+  experiment/
+    observations.md      # Agent decisions, failures, escalations
+    autonomy-log.md      # Monthly autonomy score tracking
+    signals.md           # Enterprise AI signal log
+    drafts/              # Content drafts for Substack, LinkedIn, Medium
   content/
     ideas.md             # Content ideas backlog
     strategy.md          # Calendar and distribution plans

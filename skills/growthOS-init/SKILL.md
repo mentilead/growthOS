@@ -172,6 +172,12 @@ marketing/
 ├── experiments/
 │   ├── backlog.md
 │   └── .gitkeep
+├── experiment/           (if experiment layer enabled)
+│   ├── observations.md
+│   ├── autonomy-log.md
+│   ├── signals.md
+│   └── drafts/
+│       └── .gitkeep
 ├── metrics/
 │   ├── portfolio.md
 │   └── weekly/
@@ -203,6 +209,32 @@ Read each template from the plugin's `templates/` directory, populate with gathe
 | `templates/brand-positioning.md` | `marketing/positioning/brand.md` | Fill brand name, app-to-brand mapping |
 | `templates/funnel-tracker.md` | `marketing/apps/{slug}/funnel.md` | Empty tracker with benchmarks |
 | `templates/positioning-statement.md` | `marketing/positioning/positioning.md` | Fill competitor data from Step 2 |
+| `templates/observations.md` | `marketing/experiment/observations.md` | Experiment layer only |
+| `templates/autonomy-log.md` | `marketing/experiment/autonomy-log.md` | Experiment layer only |
+| `templates/signals.md` | `marketing/experiment/signals.md` | Experiment layer only |
+
+### Experiment Layer (Optional)
+
+After creating the standard directory structure, ask:
+
+**"Are you using GrowthOS to document a public experiment? (yes/no)"**
+
+If yes:
+1. Create `marketing/experiment/` directory with `drafts/` subdirectory (`.gitkeep`)
+2. Copy `templates/observations.md` → `marketing/experiment/observations.md`
+3. Copy `templates/autonomy-log.md` → `marketing/experiment/autonomy-log.md`
+4. Copy `templates/signals.md` → `marketing/experiment/signals.md`
+5. Set `experiment_chapter: "Chapter 1: The Wager"` in `marketing/STATUS.md` frontmatter
+6. Read `references/experiment-thesis.md` and add to `marketing/MEMORY.md`:
+   ```
+   ## Experiment Layer
+   - **Thesis:** {thesis from experiment-thesis.md}
+   - **Current Chapter:** Chapter 1: The Wager
+   - **Observations logged:** 0
+   - **Autonomy Score:** Not yet measured
+   ```
+
+If no: skip. No experiment files created.
 
 ### Files Created Empty (Just Headers or .gitkeep)
 
@@ -350,6 +382,8 @@ Create `marketing/logs/{today}.md` where `{today}` is today's date in YYYY-MM-DD
 - **Monthly budget:** {budget_tier}
 - **Initial assessment:** Generated competitive landscape and ICP hypothesis
 - **Recommended next step:** {recommended skill from Step 5}
+{if experiment layer enabled:}
+- **Experiment layer:** Enabled — Chapter 1: The Wager
 ```
 
 ### Update STATUS.md
@@ -378,6 +412,8 @@ marketing/
 ├── content/ — Content strategy (empty, ready for Content skill)
 ├── outreach/ — Outreach templates (empty, ready for Outreach skill)
 ├── partnerships/ — Partnership pipeline (empty, ready for Partnerships skill)
+{if experiment layer enabled:}
+├── experiment/       — Observation log, autonomy tracker, signals, drafts
 └── logs/{today}.md — Today's session log
 
 {Quick positioning assessment from Step 4}

@@ -1,7 +1,7 @@
 {
   "name": "mentilead-growth-os",
-  "description": "Marketing operating system for Shopify app developers. Guides you from positioning through scaling with structured workflows, experiment tracking, and Shopify-specific best practices — all powered by local markdown files.",
-  "version": "0.9.0",
+  "description": "Marketing operating system for Shopify app developers. Guides you from positioning through scaling with structured workflows, experiment tracking, and Shopify-specific best practices — all powered by local markdown files. Includes an optional experiment layer for documenting AI-agent autonomy.",
+  "version": "1.0.0",
   "author": {
     "name": "Mentilead",
     "url": "https://github.com/mentilead"
@@ -9,5 +9,5 @@
   "license": "MIT",
   "homepage": "https://github.com/mentilead/growthOS",
   "repository": "https://github.com/mentilead/growthOS",
-  "keywords": ["shopify", "marketing", "growth", "app-store", "saas"]
+  "keywords": ["shopify", "marketing", "growth", "app-store", "saas", "experiment", "agentic-ai", "public-building"]
 }
