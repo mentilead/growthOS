@@ -44,6 +44,18 @@ When a skill needs to operate on a specific app:
 ### Backward Compatibility
 Single-app users never see the `apps/` subdirectory concept. If init detects one app, it creates `marketing/apps/{slug}/` internally but the user experience is identical to a flat structure. The portfolio MEMORY.md and STATUS.md simply have one app listed.
 
+## Release Process
+
+Every release MUST go through this process — no exceptions:
+
+1. Bump `version` in `.claude-plugin/plugin.json` to the new version
+2. Commit the version bump (and any other changes) and push to main
+3. Create the release: `gh release create vX.Y.Z --title "Mentilead GrowthOS vX.Y.Z" --notes "..."`
+4. The GitHub Actions release workflow automatically validates, builds the plugin zip, and attaches it to the release
+5. Verify the zip is attached: `gh release view vX.Y.Z`
+
+NEVER create a release without first bumping plugin.json. The workflow validates that the tag version matches plugin.json and will fail if they don't match.
+
 ## Experiment Layer
 - Skills producing publishable content MUST read `references/voice.md` before generating any output
 - Skills working on observation logs or narrative synthesis MUST read `references/experiment-thesis.md` before taking action
