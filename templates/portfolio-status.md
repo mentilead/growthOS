@@ -34,5 +34,9 @@ experiment_chapter: "Chapter 1: Foundation"
 - [ ]
 - [ ]
 
+## Follow-ups
+| Due | Action | Context | Source | Status |
+|-----|--------|---------|--------|--------|
+
 ## Blockers
 (Nothing currently)
