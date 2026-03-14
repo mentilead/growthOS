@@ -57,3 +57,66 @@ Use these as signals that something is worth writing about:
 - **Specific numbers over general claims.** If you can put a number on it, it's probably worth writing about. "Agent made 3 decisions autonomously this week, 2 were correct, 1 required rollback" is a post.
 - **When reality contradicts the narrative.** If the experiment thesis predicts X but reality delivers Y, write about Y immediately.
 - **Moments of genuine surprise.** When the agent does something unexpected — good or bad — capture it while the details are fresh.
+
+## Personal Voice Protocol (PVP)
+
+Applies to: Substack and LinkedIn drafts only. Not Medium (source material from existing piece). Not Content Review.
+
+Before drafting, gather answers to these four questions:
+
+1. **Specific moment** — Date, time of day, what you were doing when this happened. "Tuesday morning, reviewing the agent's overnight decisions" not "recently."
+2. **Sensory detail** — What you saw on screen, heard, felt. The Slack notification sound. The spreadsheet cell turning red. The three-second pause before the agent responded.
+3. **Personal reaction** — Surprise, frustration, confusion, satisfaction. What you actually thought in the moment, not the cleaned-up version.
+4. **Enterprise parallel** — What would this look like at 500 seats? What would the procurement team say? How does this compare to what you see at AWS?
+
+**Source material hierarchy** (most valuable first):
+1. Personal anecdotes with sensory detail
+2. Specific data points with dates
+3. Direct quotes (from logs, Slack, dashboards)
+4. Analytical synthesis (least valuable — use sparingly)
+
+**Minimum threshold:** At least 2 of 4 elements must have substantive answers for "high" confidence. If fewer than 2, confidence drops to "low" and the draft carries a warning.
+
+**Skip behavior:** If the user skips PVP entirely, set pvp_status to "skipped", issue a warning that the draft will read generic, and proceed with low confidence.
+
+## Banned Patterns
+
+These patterns trigger automatic rewriting. No exceptions.
+
+### Banned Hedge Words
+somewhat, relatively, arguably, it seems, perhaps, might suggest, could potentially, tends to
+
+### Banned Performative Enthusiasm
+exciting, incredible, game-changing, thrilled, amazing, remarkable, groundbreaking, revolutionary, delighted, proud to share
+
+### Banned Transitions
+Therefore, However, Moreover, Furthermore, In conclusion, Notably, Interestingly, Additionally, Consequently, It's worth noting, It should be noted
+
+### Banned Generic Filler
+in today's rapidly evolving landscape, at the end of the day, moving forward, leveraging, utilize, synergy, paradigm shift, deep dive, unpack
+
+### Banned Structural Patterns
+- **Bold-colon format** (`**Label:** text`) in body paragraphs — acceptable only in metadata fields and frontmatter
+- **Triple parallelism** — three consecutive sentences or bullet points with identical grammatical structure
+- **Em dash overuse** — maximum one em dash per 300 words
+- **Neat-bow endings** — final paragraph must not summarize, restate the thesis, or wrap up cleanly. End with an open question, a tension, or a detail that lingers
+
+## Rhythm Engineering Rules
+
+These are mechanical checks, not guidelines. Fix violations before presenting any draft.
+
+- **No monotone runs:** No 3 consecutive sentences within 5 words of the same length
+- **Fragment quota:** At least 1 sentence fragment per 300 words
+- **Long sentence quota:** At least 1 sentence over 30 words per 500 words
+- **Single-sentence paragraphs:** At least 1 per piece
+- **Sentence length variation:** Target standard deviation > 8 across all sentence lengths in the piece
+- **No predictable paragraph structure:** Never [claim][explanation][example][conclusion] in a single paragraph
+- **Detail-first paragraphs:** At least one paragraph must open with a concrete detail, not a topic sentence
+
+## Vocabulary Diversification
+
+- **Concrete over abstract:** Use nouns you can photograph. "Dashboard" not "interface." "Tuesday's log" not "recent data."
+- **Contractions everywhere:** Unless formal context demands otherwise. "It's" not "It is." "Didn't" not "Did not."
+- **Grammatical roughness allowed:** Start sentences with But, And, So. Use parenthetical asides. Break rules that make prose sound polished-by-committee.
+- **Predictable word replacement:** When you reach for the obvious word, pause. Find one that's less common but equally clear. "Sprawling" instead of "large." "Flagged" instead of "identified."
+- **No synonym cycling:** Don't rotate through synonyms to avoid repetition. If the right word is "agent," use "agent" five times. Forced variation reads worse than repetition.
