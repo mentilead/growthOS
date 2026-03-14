@@ -1,8 +1,10 @@
 # Mentilead GrowthOS — Claude Code Plugin
 
 ## Project Context
-This is a Claude Code plugin that provides Shopify app marketing skills.
-It uses local markdown files as persistent state/memory for marketing activities.
+This is a Claude Code plugin that serves as an AI operating system for running
+a Shopify app portfolio. The COO agent coordinates 18 skills across marketing,
+publishing, experiments, and code projects via a cross-agent comms protocol.
+It uses local markdown files as persistent state/memory.
 
 ## Conventions
 - All skills use YAML frontmatter for metadata

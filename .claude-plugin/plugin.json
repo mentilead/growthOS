@@ -1,6 +1,6 @@
 {
   "name": "mentilead-growth-os",
-  "description": "Marketing operating system for Shopify app developers. Guides you from positioning through scaling with structured workflows, experiment tracking, and Shopify-specific best practices — all powered by local markdown files. Includes an optional experiment layer for documenting AI-agent autonomy.",
+  "description": "AI operating system for running a Shopify app portfolio. A COO agent coordinates 18 skills across marketing, publishing, and experiments, delegating code tasks via cross-agent comms. Built around a live experiment measuring AI operational autonomy — all state in local markdown.",
   "version": "1.5.0",
   "author": {
     "name": "Mentilead",

@@ -1,333 +1,127 @@
 # Mentilead GrowthOS
 
-[![Version](https://img.shields.io/badge/version-1.2.0-blue)](https://github.com/mentilead/growthOS/releases)
+[![Version](https://img.shields.io/badge/version-1.5.0-blue)](https://github.com/mentilead/growthOS/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-blueviolet)](https://claude.com/claude-code)
-[![Shopify](https://img.shields.io/badge/Shopify-App_Marketing-96bf48?logo=shopify&logoColor=white)](https://apps.shopify.com)
-[![Markdown](https://img.shields.io/badge/Powered_by-Markdown-000?logo=markdown)](https://daringfireball.net/projects/markdown/)
-[![Zero Dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen)]()
 
-A Claude Code plugin that turns your local filesystem into a structured marketing operating system for Shopify app developers.
+An AI operating system for running a Shopify app portfolio. GrowthOS puts an autonomous COO agent in charge of daily operations — reading state across marketing, publishing, experiments, and development, delegating to 18 specialized skills, and coordinating code work across projects via a cross-agent comms protocol. The human holds direction and values. The agents operate.
 
-GrowthOS guides you through the full marketing lifecycle — from positioning and ICP definition through app store optimization, outreach, and scaling — using local markdown files as persistent state.
-
-<!-- TODO: Add GIF demo showing init → status dashboard → experiment creation -->
-
-## Why This Exists
-
-The Shopify App Store has 12,000+ apps. 54.53% of developers earn under $1,000/month. Most apps fail not because they're bad products, but because developers don't know how to systematically market them.
-
-This plugin encodes proven Shopify marketing methodology into a structured, repeatable system that any developer can follow.
-
-## What You Get
-
-| Skill | Status | What It Does |
-|-------|--------|-------------|
-| **Init** | Ready | Set up your marketing workspace for single or multi-app portfolios |
-| **Positioning** | Ready | Define ICP, Jobs-to-be-Done, and positioning using April Dunford's framework |
-| **Idea Validator** | Ready | Validate app ideas with a 5-Signal Framework before you build |
-| **ASO Optimizer** | Ready | Optimize your App Store listing (title, subtitle, keywords, description, visuals) |
-| **Outreach** | Ready | Build cold email campaigns with segment targeting and template generation |
-| **Experiment Engine** | Ready | ICE-scored experiment management with hypothesis tracking, backlog prioritization, and results analysis |
-| **Content Strategy** | Ready | Plan content marketing with idea generation, calendar building, distribution planning, and content briefs |
-| **Review Manager** | Ready | Build review acquisition strategy with timing triggers, Shopify policy compliance, response templates, and impact tracking |
-| **Partnerships** | Ready | Build partnership channels with complementary app discovery, agency outreach, expert partnerships, and pipeline tracking |
-| **Metrics Dashboard** | Ready | Track funnel metrics, compare against Shopify benchmarks, identify bottlenecks, and analyze channel attribution |
-| **Weekly Review** | Ready | Structured weekly review ritual with metrics synthesis, experiment check-ins, channel performance, learnings capture, priority planning, and burnout-prevention mood check |
-| **Observation Logger** | Ready | Capture experiment observations — agent decisions, failures, escalations, contradictions, milestones |
-| **Autonomy Tracker** | Ready | Track the Autonomy Score — the experiment's primary KPI measuring autonomous vs. human-required decisions |
-| **Publisher** | Ready | Draft publication-ready content from experiment observations for Substack, LinkedIn, and Medium |
-| **Signal Monitor** | Ready | Track enterprise AI signals and surface contradictions with experiment findings |
-| **COO** | Ready | Cross-domain operating officer — reads marketing, experiment, development, and publishing state to produce daily prioritized briefings with approval routing |
-| **Next** | Ready | Recommend the next highest-impact marketing action based on current phase, metrics, and activity |
-| **Status** | Ready | Show current marketing dashboard with key metrics, active experiments, priorities, and health indicators |
-
-## Install
-
-### From GitHub (recommended)
-
-```
-/plugin marketplace add mentilead/growthOS
-```
-
-Then install the plugin:
-
-```
-/plugin install mentilead-growth-os
-```
-
-### Claude Cowork (web)
-
-1. Download the [latest release](https://github.com/mentilead/growthOS/releases) as a `.zip` file
-2. Open [Claude Cowork](https://claude.com)
-3. Go to **Plugins** in the sidebar
-4. Click **Upload plugin** and select the downloaded `.zip` file
-
-### Claude Code (CLI)
-
-Download the [latest release](https://github.com/mentilead/growthOS/releases) and install from the local file:
-
-```
-/plugin install /path/to/mentilead-growthOS.zip
-```
-
-## Quick Start
-
-After installing, just tell Claude what you need:
-
-- *"Help me position my Shopify app"* — starts the positioning skill
-- *"Optimize my app store listing"* — starts the ASO optimizer
-- *"I need to validate an app idea"* — starts the idea validator
-- *"Help me build an outreach campaign"* — starts the outreach skill
-- *"I want to run a marketing experiment"* — starts the experiment engine
-- *"Help me plan blog content for my app"* — starts the content strategy skill
-- *"Help me get more reviews for my app"* — starts the review manager
-- *"Help me find partnership opportunities"* — starts the partnerships skill
-- *"Update my funnel metrics"* — starts the metrics dashboard
-- *"Let's do a weekly review"* — starts the weekly review skill
-- *"What should I work on next?"* — runs the next skill
-- *"Show my marketing dashboard"* — runs the status skill
-- *"When was my last review?"* — starts the review skill
-- *"Log an observation"* — starts the observation logger
-- *"What's my autonomy score?"* — shows the score
-- *"I want to draft a post about the experiment"* — starts the draft skill
-- *"I saw an interesting AI signal"* — starts the signal monitor
-- *"What should I work on today?"* — runs the COO briefing
-- *"Set up my marketing workspace"* — starts initialization
-
-GrowthOS creates a `marketing/` directory in your project with structured markdown files that track your entire marketing strategy. Everything is human-readable and git-trackable.
-
-## Skills Guide
-
-### Init
-**When to use:** First time setup, or when adding a new app to your portfolio.
-**Example:** *"Set up GrowthOS for my Shopify app"*
-Creates the `marketing/` directory structure with portfolio-level and per-app state. Supports single-app and multi-app portfolios.
-
-### Positioning
-**When to use:** Before any marketing — you need to know who you're targeting and why they should care.
-**Example:** *"Help me define my ideal customer profile"*
-Guides through ICP definition, Jobs-to-be-Done research, competitive analysis, and positioning statement creation using April Dunford's framework.
-**Next:** ASO Optimizer (your positioning feeds directly into listing copy)
-
-### Idea Validator
-**When to use:** Before building a new app, to validate demand and competitive landscape.
-**Example:** *"Should I build an inventory management app for Shopify?"*
-Analyzes competitive landscape, identifies underserved merchants, maps demand signals, and produces a go/no-go recommendation with evidence.
-
-### ASO Optimizer
-**When to use:** When creating or improving your App Store listing.
-**Example:** *"Optimize my app store listing for more installs"*
-Helps with app title (30 chars), subtitle (62 chars), keywords (20 terms), description copy, screenshot strategy, and demo video planning.
-**Requires:** Positioning (for ICP-aligned copy and keyword targeting)
-
-### Outreach
-**When to use:** When you need direct merchant acquisition beyond organic search.
-**Example:** *"Build an outreach campaign targeting merchants who uninstalled my competitor"*
-Creates personalized email sequences, identifies target merchant segments (competitor uninstalls convert at 15-25%), and tracks campaign results.
-**Requires:** Positioning (for segment targeting and messaging)
-
-### Experiment Engine
-**When to use:** When you want to systematically test marketing ideas.
-**Example:** *"I want to test whether comparison blog posts drive more installs"*
-ICE-scored experiment management with hypothesis tracking, backlog prioritization, and results analysis. Enforces a 3-concurrent-experiment limit to maintain focus.
-**Works with:** All other skills — experiments can test any channel or tactic
-
-### Content Strategy
-**When to use:** When planning blog posts, comparison articles, or SEO content.
-**Example:** *"Help me plan content for the next month"*
-Generates content ideas mapped to funnel stages, creates a content calendar, plans distribution across channels, and produces detailed content briefs.
-**Requires:** Positioning (for topic relevance and audience alignment)
-
-### Review Manager
-**When to use:** When you need more reviews or need to respond to existing ones.
-**Example:** *"Help me build a review acquisition strategy"*
-Timing triggers for review requests, Shopify policy compliance checks, response templates for positive/negative/feature-request reviews, and milestone tracking toward the 20-60 review threshold for organic discovery.
-**Works with:** Metrics Dashboard (review count is a key funnel metric)
-
-### Partnerships
-**When to use:** When you want to grow through complementary apps, agencies, or experts.
-**Example:** *"Find apps that would be good cross-promotion partners"*
-Identifies complementary apps, agencies, and industry experts. Manages outreach pipeline with follow-up cadence and tracks partnership value over time.
-
-### Metrics Dashboard
-**When to use:** When updating weekly metrics or analyzing funnel performance.
-**Example:** *"Update my metrics for this week"*
-Tracks views, installs, activations, trials, paid conversions, and retention. Compares against Shopify benchmarks, identifies bottlenecks, and recommends optimizations.
-**Works with:** Weekly Review (metrics feed into the review ritual)
-
-### Weekly Review
-**When to use:** Every week — builds the habit of consistent marketing improvement.
-**Example:** *"Let's do my weekly marketing review"*
-Structured ritual covering metrics synthesis, experiment check-ins, channel performance, learnings capture, and priority planning. Includes a mood check for burnout prevention.
-**Requires:** At least one week of activity to review
-
-### Observation Logger
-**When to use:** When something notable happens with an AI agent — a decision, failure, escalation, or contradiction.
-**Example:** *"The support agent auto-replied to a merchant complaint without escalating"*
-Captures experiment observations with type classification, severity tagging, and optional reflections that compare enterprise advice to solo reality. Automatically updates the Autonomy Score.
-**Works with:** Autonomy Tracker (score updates), Publisher (observations become content)
-
-### Autonomy Tracker
-**When to use:** When you want to see how autonomous your operations are, or at the end of each month.
-**Example:** *"What's my autonomy score?"*
-Tracks the experiment's primary KPI — the percentage of operational decisions that required no human input. Shows trend over time, system-by-system breakdown, and chapter-level assessment.
-**Works with:** Observation Logger (data source), Publisher (score trends become content)
-
-### Publisher
-**When to use:** When you have enough observations to write about the experiment.
-**Example:** *"I want to draft a Substack post about this month"*
-Synthesizes observations into platform-specific content: Substack monthly journals, LinkedIn single-observation posts, and Medium SEO reformats. Follows the voice guide strictly.
-**Requires:** Observations logged via the Observation Logger
-
-### Signal Monitor
-**When to use:** When you encounter enterprise AI news, reports, or announcements worth tracking.
-**Example:** *"McKinsey just published a report saying 60% of enterprises will have AI agents by 2027"*
-Logs enterprise AI signals and surfaces contradictions with your experiment findings. Contradictions are the highest-priority content angles for the Publisher.
-**Works with:** Publisher (contradictions become content)
-
-### COO
-**When to use:** Every day, or when you need a strategic overview across all domains.
-**Example:** *"What should I work on today?"*
-Cross-domain operating officer that reads marketing health, experiment state, development pipeline, and publishing cadence simultaneously. Produces a ranked briefing of actionable items you approve, skip, or defer. Approved items route directly to the right skill. Tracks carry-overs so nothing falls through the cracks.
-**Works with:** All skills — the COO routes to any skill based on what's most important
-
-### Next
-**When to use:** When you're unsure what marketing task to focus on.
-**Example:** *"What should I work on next?"*
-Analyzes your current phase, funnel metrics, and recent activity to recommend the single highest-impact marketing action. Marketing-only — for cross-domain prioritization, use the COO.
-
-### Status
-**When to use:** When you want a quick overview of your marketing health.
-**Example:** *"Show my marketing dashboard"*
-Displays key metrics, active experiments, priorities, channel performance, and health indicators compared against Shopify benchmarks.
-
-## The COO Concept
-
-GrowthOS skills are tools. The COO is the judgment layer above them.
-
-It reads across all domains simultaneously — marketing metrics, experiment observations, development pipeline, publishing cadence — and makes trade-off decisions between competing priorities. Should you draft a Substack post or fix a dropping install rate? The COO knows both states and recommends the higher-impact action.
-
-The accountability loop is intentional. When you approve an action and don't complete it, the COO surfaces it next session. When you defer something, it comes back on the deferred date. A COO that only tells you good news is useless.
-
-The approval model is deliberate: the COO recommends, you decide, GrowthOS executes. No action runs without your approval. You stay in control of direction and values — the COO handles operational awareness.
-
-Configure it in `references/coo-config.md` to match your actual time constraints and commitments.
-
-## Experiment Layer
-
-GrowthOS includes an optional experiment layer for developers who want to run a portfolio AND document a public experiment simultaneously.
-
-The experiment tracks one core question: *Can one person replace every operational function with AI agents until the only irreplaceable role is holding direction and values?*
-
-This runs on real revenue, real customers, and real consequences — poker without money is a card game.
-
-### Enable It
-
-During init, say yes when asked about documenting a public experiment. Or tell Claude:
-*"I want to document a public experiment about running my company with AI agents"*
-
-### What It Adds
-
-- **Observation logging** — capture agent decisions, failures, and escalations as they happen
-- **Autonomy Score** — the primary KPI measuring autonomous vs. human-required decisions
-- **Signal tracking** — log enterprise AI signals and surface contradictions with your findings
-- **Content publishing** — draft Substack, LinkedIn, and Medium posts from your observations
-
-## Recommended Workflow
-
-### Week 1-2: Foundation
-1. **Init** — Set up your marketing workspace
-2. **Positioning** — Define your ICP, Jobs-to-be-Done, and positioning statement
-3. **ASO Optimizer** — Optimize your App Store listing with positioning-aligned copy
-
-### Week 3-4: Acquisition
-4. **Outreach** — Build your first cold email campaign targeting high-converting segments
-5. **Review Manager** — Set up review acquisition triggers and response templates
-
-### Month 2+: Growth
-6. **Experiment Engine** — Start testing marketing hypotheses systematically
-7. **Content Strategy** — Plan SEO content that compounds over time
-8. **Partnerships** — Build complementary app and agency relationships
-
-### Ongoing
-- **Weekly Review** — Every week, review metrics, experiments, and plan next priorities
-- **Metrics Dashboard** — Update funnel metrics weekly to track progress against benchmarks
-- *"What should I work on?"* — anytime you're unsure
+This isn't a marketing template. It's the infrastructure for a live experiment: *Can one person replace every operational function with AI agents?*
 
 ## How It Works
 
-GrowthOS uses **local markdown files** as your marketing database. No external APIs, no accounts, no databases.
+The COO agent runs a daily briefing cycle:
+
+1. **Reads all state** — marketing metrics, experiment observations, publishing cadence, development roadmap, and pending agent-comms
+2. **Identifies what matters** — overdue follow-ups, anomalous metrics, stale experiments, unprocessed Claude Code results
+3. **Acts autonomously** on routine work — research, state updates, delegations to other skills, writing instructions for Claude Code
+4. **Escalates** only decisions requiring founder judgment — publishing, outreach to real people, strategy changes, spending
+5. **Presents a briefing** with completed actions, alerts, and ranked recommendations
+6. **Routes approved work** directly to the right skill with full context
+
+Everything persists in local markdown files. No APIs, no databases, no accounts. Human-readable and git-trackable.
+
+## The Experiment
+
+GrowthOS tracks one core question: *Can one person replace every operational function with AI agents until the only irreplaceable role is holding direction and values?*
+
+This runs on real revenue, real customers, and real consequences.
+
+The primary KPI is the **Autonomy Score** — the percentage of operational decisions that required no human input. As of Chapter 1, it's around 50%. The goal is to push it higher by identifying which decisions genuinely need a human and which are just habit.
+
+Observations get logged as they happen — agent decisions, failures, escalations, contradictions with enterprise AI narratives. These observations feed into published content via a five-pass quality pipeline.
+
+## Skills
+
+### Operations
+
+| Skill | What It Does |
+|-------|-------------|
+| **COO** | Autonomous operating officer — reads all domains, delegates, executes routine work, escalates the rest |
+| **Weekly Review** | Structured review ritual with metrics synthesis, experiment check-ins, and priority planning |
+| **Status** | Quick marketing health dashboard with metrics and benchmarks |
+| **Next** | Recommends the single highest-impact marketing action |
+
+### Marketing
+
+| Skill | What It Does |
+|-------|-------------|
+| **Positioning** | ICP, Jobs-to-be-Done, and positioning using April Dunford's framework |
+| **ASO Optimizer** | App Store listing optimization (title, subtitle, keywords, description, visuals) |
+| **Content Strategy** | Content planning with idea generation, calendar, distribution, and briefs |
+| **Outreach** | Cold email campaigns with segment targeting and template generation |
+| **Partnerships** | Complementary app discovery, agency outreach, and pipeline tracking |
+| **Review Manager** | Review acquisition strategy with Shopify policy compliance |
+| **Metrics Dashboard** | Funnel tracking against Shopify benchmarks |
+| **Experiment Engine** | ICE-scored experiment management with hypothesis tracking |
+
+### Publishing
+
+| Skill | What It Does |
+|-------|-------------|
+| **Publisher** | Drafts Substack, LinkedIn, and Medium posts from observations with Personal Voice Protocol and anti-AI quality gate |
+| **Observation Logger** | Captures agent decisions, failures, escalations, and contradictions |
+| **Signal Monitor** | Tracks enterprise AI signals and surfaces contradictions with experiment findings |
+| **Autonomy Tracker** | Tracks the Autonomy Score — the experiment's primary KPI |
+
+### Infrastructure
+
+| Skill | What It Does |
+|-------|-------------|
+| **Init** | Sets up the marketing workspace for single or multi-app portfolios |
+| **Idea Validator** | Validates app ideas with a 5-Signal Framework before building |
+
+## Agent-Comms Protocol
+
+GrowthOS runs across two agents: **Cowork** (Claude Desktop, where the COO lives) and **Claude Code** (terminal, where code changes happen). They coordinate via a mailbox system:
 
 ```
-marketing/
-  MEMORY.md              # Cross-cutting learnings and insights
-  STATUS.md              # Current state and next actions
-  apps/
-    {your-app}/
-      listing.md         # App Store listing (title, subtitle, description)
-      keywords.md        # Keyword research and prioritization
-      positioning.md     # Per-app positioning and differentiators
-  positioning/
-    icp.md               # Ideal Customer Profile
-    jtbd.md              # Jobs-to-be-Done research
-    positioning.md       # Competitive positioning statement
-  outreach/
-    targets.md           # Target merchant segments
-    templates.md         # Email sequence templates
-    campaigns/           # Individual campaign tracking
-  experiments/
-    backlog.md           # ICE-scored experiment queue
-    exp-001-*.md         # Individual experiment files
-  experiment/
-    observations.md      # Agent decisions, failures, escalations
-    autonomy-log.md      # Monthly autonomy score tracking
-    signals.md           # Enterprise AI signal log
-    drafts/              # Content drafts for Substack, LinkedIn, Medium
-  content/
-    ideas.md             # Content ideas backlog
-    strategy.md          # Calendar and distribution plans
-    briefs/              # Individual content briefs
-  reviews/
-    strategy.md          # Review acquisition strategy and compliance
-    responses.md         # Response templates and response log
-  partnerships/
-    pipeline.md          # Partnership pipeline and prospect tracking
-    templates.md         # Outreach templates and follow-up cadence
-  metrics/
-    portfolio.md         # Aggregated portfolio metrics (multi-app)
-    weekly/              # Weekly performance snapshots
-  logs/                  # Daily session logs
+agent-comms/
+  outbox/            # Instructions written by Cowork, run in Claude Code
+  inbox/             # Results written by Claude Code after completing work
+  archive/           # Completed exchanges
+  project-registry/  # One file per project with architecture and gotchas
 ```
 
-Each skill reads and writes to specific files, building on previous work. Your positioning informs your ASO copy. Your ICP shapes your outreach targeting. Results feed back into learnings for the next iteration.
+The COO reads inbox/outbox during briefings, writes structured delegation files when work needs to happen in a specific codebase, and alerts when tasks go stale. The project registry gives the COO enough context to write useful instructions without the human having to explain project architecture each time.
 
-## Shopify-Specific Context
+This currently coordinates across 5 projects: the GrowthOS plugin itself, two Shopify apps, a marketing website, and infrastructure.
 
-This isn't generic marketing advice. GrowthOS knows:
+## Quick Start
 
-- App titles are **30 characters** max, subtitles are **62 characters**
-- **70%+** of installs come from in-store search
-- You need **20-60 reviews** for organic discovery
-- Competitor-uninstall targeting converts at **15-25%** (vs 1-2% for random cold email)
-- App introduction is **100 characters** max
-- Cold emails must be **under 100 words** with **no links in email 1**
+### Install
 
-All benchmarks and constraints come from built-in reference files that the skills load on demand.
+```
+/install mentilead/growthOS
+```
 
-## Multi-App Support
+Or download the [latest release](https://github.com/mentilead/growthOS/releases) and install from the zip.
 
-GrowthOS works for both single apps and multi-app portfolios. If you have multiple Shopify apps, each gets its own workspace under `marketing/apps/{slug}/` while sharing portfolio-level positioning and outreach data.
+### First run
 
-## Contributing
+Tell Claude: *"What should I work on today?"*
 
-We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add new skills, improve reference data, or report issues.
+This triggers the COO briefing. If you haven't initialized yet, it'll prompt you to set up first.
 
-## Built With
+### Key commands
 
-Built by [Mentilead](https://github.com/mentilead) for the Shopify developer community.
+- *"What should I work on today?"* — COO briefing
+- *"Set up GrowthOS for my Shopify app"* — initialization
+- *"Help me position my Shopify app"* — positioning workflow
+- *"Optimize my app store listing"* — ASO optimizer
+- *"Log an observation"* — capture an experiment observation
+- *"What's my autonomy score?"* — check the experiment KPI
 
-GrowthOS is free and open-source because we believe every Shopify app developer deserves access to a structured marketing system — not just those who can afford consultants or courses.
+## Voice and Content
+
+Published content follows strict quality standards:
+
+- **Voice file** (`references/voice.md`) — defines the practitioner voice: direct, evidence-first, allergic to buzzwords
+- **Personal Voice Protocol** — the publisher skill matches the founder's specific writing patterns
+- **Five-pass quality gate** — structure, evidence, voice, AI-pattern detection, final review
+- **Anti-AI detection** — flags and rewrites patterns that read as AI-generated (hedging, list addiction, false certainty)
+
+The goal: content that reads like a practitioner wrote it, because a practitioner directed it.
 
 ## Requirements
 
@@ -336,4 +130,4 @@ GrowthOS is free and open-source because we believe every Shopify app developer 
 
 ## License
 
-MIT
+MIT — built by [Mentilead](https://github.com/mentilead).
