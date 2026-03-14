@@ -27,6 +27,7 @@ The COO's job is to OPERATE, not present options. It reads all state files, rese
 - Run competitive research or market analysis
 - Add reflections to observations with `has_reflection: false`
 - Draft content for founder review before publishing
+- Check Gmail for business-relevant emails, categorize, and surface highlights
 
 ### Escalate (present recommendation, wait for approval)
 
@@ -100,10 +101,31 @@ Read all domains before generating any output.
 - Read `agent-comms/outbox/*.md` — pending instructions not yet run. Check the `status` and `priority` fields.
 - Scan `agent-comms/project-registry/*.md` frontmatter — know which projects exist and their current status. Only read full files when you need project-specific context for a delegation.
 
+### Email Domain (Gmail)
+
+If `gmail_enabled` is `true` in `references/coo-config.md`:
+
+1. Call `gmail_search_messages` for each query in `gmail_search_queries` with `maxResults` from config (default 10)
+2. Deduplicate results by message ID
+3. For each unique email, call `gmail_read_message` to get content
+4. Categorize each email:
+   - **Revenue** — payout notifications, billing alerts, subscription changes
+   - **Reviews** — new review notifications, review responses
+   - **Partner** — Shopify Partner Dashboard alerts, app status changes, policy updates
+   - **Support** — merchant questions, bug reports, feature requests
+   - **Opportunity** — partnership inquiries, press mentions, conference invitations
+   - **Noise** — marketing emails, newsletters, automated notifications with no action needed
+5. Discard `Noise` silently
+6. For remaining emails, note: sender, subject, date, category, one-line summary
+
+If `gmail_enabled` is `false` or Gmail section missing, skip silently.
+If Gmail tools are unavailable or error, log "Gmail unavailable — skipped" and continue.
+
 ### Guard Rails
 
 - If `marketing/` does not exist → tell user to run init first, stop.
 - If `references/coo-config.md` does not exist → tell user to configure the COO during init or manually, stop.
+- If Gmail tools error → continue without email data (non-blocking).
 
 ---
 
@@ -141,6 +163,9 @@ Identify alerts — things outside normal range or overdue. Always surface above
 | Partnership prospect with no follow-up for more than 14 days | ALERT |
 | Inbox file older than 3 days unread by Cowork | ALERT: UNPROCESSED CLAUDE CODE RESULT |
 | Urgent outbox file pending more than 2 days | ALERT: URGENT TASK NOT STARTED |
+| Email from Shopify about app suspension, policy violation, or listing removal | ALERT: SHOPIFY POLICY |
+| Email from a merchant reporting a critical bug or data loss | ALERT: MERCHANT ESCALATION |
+| Payout email showing revenue drop of more than 20% vs previous period | ALERT: REVENUE DROP |
 
 Overdue follow-ups rank ABOVE all other alerts. They represent promises the user made to themselves.
 
@@ -221,6 +246,13 @@ For items requiring founder judgment:
 2. Present with evidence and a specific recommendation (not just options)
 3. Include a clear approval phrase
 
+#### Email Escalations
+
+Emails requiring a reply (Support, Opportunity) are added to Track B. The COO:
+1. Drafts a recommended reply using `gmail_create_draft` (does NOT send)
+2. Presents the draft in NEEDS YOUR CALL with original email context
+3. If approved, tells the founder the draft is ready in Gmail to review and send
+
 ### Scoring Model (applies to Track B ordering)
 
 1. Alerts automatically rank above all non-alerts
@@ -250,6 +282,11 @@ ALERTS
 FOLLOW-UPS DUE
 - {dated items from Follow-ups table due today or overdue}
 
+EMAIL HIGHLIGHTS (last 24h)
+  [{category}] {sender} -- {subject}
+    {one-line summary}
+    {-> "Reply needed" or "FYI only"}
+
 CLAUDE CODE TASKS
   Completed (inbox):
   - [{project}] {what was done} -- {result summary}
@@ -277,6 +314,8 @@ Autonomy Score: {X}% ({+/-N}pp vs last month)
 Unprocessed observations: {N}
 Days since last publish: Substack {N} / LinkedIn {N}
 ```
+
+Omit EMAIL HIGHLIGHTS if Gmail not enabled or no business-relevant emails found. Emails requiring reply are also surfaced in NEEDS YOUR CALL with draft reply.
 
 Omit empty sections. If no experiment layer is enabled, omit EXPERIMENT PULSE.
 
@@ -330,6 +369,9 @@ Append to `marketing/experiment/coo-log.md`:
 
 ### Claude Code Results
 - [{project}] {what was done}: {result summary}
+
+### Email Actions
+- {category}: {subject} -- {action: "surfaced" / "draft reply created" / "alert raised"}
 
 ### Carry-overs resolved
 - {action}: {resolved / still pending / no longer relevant}
@@ -423,10 +465,10 @@ The COO reads this table in Step 0 and surfaces overdue items as alerts. Skills 
 
 | Step | References Read | User Files Read | User Files Written |
 |------|----------------|-----------------|-------------------|
-| Step 0 | coo-config.md | STATUS.md (incl. Follow-ups table), MEMORY.md, apps/*/funnel.md, apps/*/reviews.md, experiments/backlog.md, content/ideas.md, partnerships/pipeline.md, experiment/observations.md, experiment/autonomy-log.md, experiment/signals.md, experiment/drafts/*.md, experiment/coo-log.md, agent-os/product/roadmap.md, agent-comms/inbox/*.md, agent-comms/outbox/*.md, agent-comms/project-registry/*.md (frontmatter) | -- |
+| Step 0 | coo-config.md (incl. Gmail config) | STATUS.md (incl. Follow-ups table), MEMORY.md, apps/*/funnel.md, apps/*/reviews.md, experiments/backlog.md, content/ideas.md, partnerships/pipeline.md, experiment/observations.md, experiment/autonomy-log.md, experiment/signals.md, experiment/drafts/*.md, experiment/coo-log.md, agent-os/product/roadmap.md, agent-comms/inbox/*.md, agent-comms/outbox/*.md, agent-comms/project-registry/*.md (frontmatter), Gmail inbox (via MCP tools, if enabled) | -- |
 | Step 1 | -- | experiment/coo-log.md, relevant domain files | -- |
 | Step 2 | -- | -- | -- |
-| Step 3 | -- | varies by delegation | varies by delegation, agent-comms/outbox/*.md (new delegations) |
+| Step 3 | -- | varies by delegation | varies by delegation, agent-comms/outbox/*.md (new delegations), Gmail drafts (via MCP tools, if email escalation) |
 | Step 4 | -- | -- | -- |
 | Step 5-6 | -- | -- | experiment/coo-log.md, STATUS.md (incl. Follow-ups), logs/{today}.md, agent-comms/outbox/*.md (new delegations), agent-comms/archive/*.md (moved from inbox) |
 | Step 7 | -- | STATUS.md (Follow-ups table) | STATUS.md (Follow-ups), experiment/observations.md |

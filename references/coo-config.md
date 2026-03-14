@@ -26,3 +26,13 @@ Month 13-24 target: 80%+
 - Show effort estimates: yes
 - Maximum items per briefing: 6
 - Minimum days between full briefings: 0 (can run daily)
+
+## Gmail Integration
+gmail_enabled: true
+gmail_search_queries:
+  - "from:partners@shopify.com newer_than:1d"
+  - "from:noreply@shopify.com subject:review newer_than:1d"
+  - "from:noreply@shopify.com subject:payout newer_than:1d"
+  - "subject:mentilead newer_than:1d"
+  - "label:inbox is:unread category:primary newer_than:1d"
+gmail_max_results: 10

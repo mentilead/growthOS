@@ -1,7 +1,7 @@
 {
   "name": "mentilead-growth-os",
   "description": "AI operating system for running a Shopify app portfolio. A COO agent coordinates 18 skills across marketing, publishing, and experiments, delegating code tasks via cross-agent comms. Built around a live experiment measuring AI operational autonomy — all state in local markdown.",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "author": {
     "name": "Mentilead",
     "url": "https://github.com/mentilead"
