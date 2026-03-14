@@ -94,6 +94,12 @@ Read all domains before generating any output.
 - Read `references/coo-config.md` — time budget, publishing commitments, autonomy targets, personality settings
 - Read `marketing/experiment/coo-log.md` — previous briefing decisions (for carry-over check)
 
+### Agent Comms Domain
+
+- Read `agent-comms/inbox/*.md` — results from Claude Code work. For each file, note what was completed and which project it was in.
+- Read `agent-comms/outbox/*.md` — pending instructions not yet run. Check the `status` and `priority` fields.
+- Scan `agent-comms/project-registry/*.md` frontmatter — know which projects exist and their current status. Only read full files when you need project-specific context for a delegation.
+
 ### Guard Rails
 
 - If `marketing/` does not exist → tell user to run init first, stop.
@@ -133,6 +139,8 @@ Identify alerts — things outside normal range or overdue. Always surface above
 | Autonomy Score dropped more than 10 points vs previous month | ALERT |
 | No observation logged in more than 10 days | ALERT |
 | Partnership prospect with no follow-up for more than 14 days | ALERT |
+| Inbox file older than 3 days unread by Cowork | ALERT: UNPROCESSED CLAUDE CODE RESULT |
+| Urgent outbox file pending more than 2 days | ALERT: URGENT TASK NOT STARTED |
 
 Overdue follow-ups rank ABOVE all other alerts. They represent promises the user made to themselves.
 
@@ -162,6 +170,36 @@ The COO invokes skills directly with full context. It doesn't say "you should ru
 | Experiment end date passed | Invoke experiment-engine to pull results, present findings with recommendation |
 | Follow-up date arrived for a check | COO does the check itself (web search, Search Console), reports findings |
 | Autonomy score needs updating after observations logged | Invoke autonomy-tracker update mode |
+
+### Claude Code Delegation
+
+When a task requires work inside a specific code project (app changes, infrastructure, plugin updates, website changes), the COO writes an instruction file to the outbox instead of trying to do it within Cowork.
+
+**When to delegate to Claude Code:**
+- Plugin skill updates (mentilead-growthos)
+- App code changes (mentilead-b2b-onboard, mentilead-orderflow)
+- Website changes (mentilead-website)
+- Infrastructure/dashboard work (mentilead-helm)
+- Any task that needs access to a project's full codebase
+
+**Instruction file format:** Write to `agent-comms/outbox/{YYYY-MM-DD}-{NN}-{slug}.md`:
+
+```yaml
+---
+from: cowork-coo
+to: claude-code
+project: {folder name from project-registry}
+priority: normal | urgent
+created: {YYYY-MM-DD}
+status: pending
+---
+```
+
+Body must include: **Context** (why this task matters), **Task** (specific instructions), **Constraints** (project gotchas from project-registry), **Expected output** (result file path: `~/Documents/the-autonomy-experiment/agent-comms/inbox/{filename}-result.md`).
+
+**Reading project context:** Before writing a delegation, read `agent-comms/project-registry/{project}.md` to include the right gotchas and constraints.
+
+**Sequence numbering:** Check existing outbox files for today's date and increment the sequence number (`{NN}`).
 
 ---
 
@@ -211,6 +249,14 @@ ALERTS
 
 FOLLOW-UPS DUE
 - {dated items from Follow-ups table due today or overdue}
+
+CLAUDE CODE TASKS
+  Completed (inbox):
+  - [{project}] {what was done} -- {result summary}
+  Pending (outbox):
+  - [{project}] {task} -- {priority} -- "Run this in {project}: follow ~/Documents/the-autonomy-experiment/agent-comms/outbox/{filename}"
+  New delegations:
+  - [{project}] {task} -- {why}
 
 NEEDS YOUR CALL
 
@@ -282,9 +328,14 @@ Append to `marketing/experiment/coo-log.md`:
 ### Deferred
 - {action}: defer to {date}
 
+### Claude Code Results
+- [{project}] {what was done}: {result summary}
+
 ### Carry-overs resolved
 - {action}: {resolved / still pending / no longer relevant}
 ```
+
+After logging inbox results, move processed inbox files to `agent-comms/archive/` so they are not surfaced again in future briefings.
 
 ### STATUS.md
 
@@ -372,10 +423,10 @@ The COO reads this table in Step 0 and surfaces overdue items as alerts. Skills 
 
 | Step | References Read | User Files Read | User Files Written |
 |------|----------------|-----------------|-------------------|
-| Step 0 | coo-config.md | STATUS.md (incl. Follow-ups table), MEMORY.md, apps/*/funnel.md, apps/*/reviews.md, experiments/backlog.md, content/ideas.md, partnerships/pipeline.md, experiment/observations.md, experiment/autonomy-log.md, experiment/signals.md, experiment/drafts/*.md, experiment/coo-log.md, agent-os/product/roadmap.md | -- |
+| Step 0 | coo-config.md | STATUS.md (incl. Follow-ups table), MEMORY.md, apps/*/funnel.md, apps/*/reviews.md, experiments/backlog.md, content/ideas.md, partnerships/pipeline.md, experiment/observations.md, experiment/autonomy-log.md, experiment/signals.md, experiment/drafts/*.md, experiment/coo-log.md, agent-os/product/roadmap.md, agent-comms/inbox/*.md, agent-comms/outbox/*.md, agent-comms/project-registry/*.md (frontmatter) | -- |
 | Step 1 | -- | experiment/coo-log.md, relevant domain files | -- |
 | Step 2 | -- | -- | -- |
-| Step 3 | -- | varies by delegation | varies by delegation |
+| Step 3 | -- | varies by delegation | varies by delegation, agent-comms/outbox/*.md (new delegations) |
 | Step 4 | -- | -- | -- |
-| Step 5-6 | -- | -- | experiment/coo-log.md, STATUS.md (incl. Follow-ups), logs/{today}.md |
+| Step 5-6 | -- | -- | experiment/coo-log.md, STATUS.md (incl. Follow-ups), logs/{today}.md, agent-comms/outbox/*.md (new delegations), agent-comms/archive/*.md (moved from inbox) |
 | Step 7 | -- | STATUS.md (Follow-ups table) | STATUS.md (Follow-ups), experiment/observations.md |
