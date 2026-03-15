@@ -13,33 +13,60 @@ description: >
 
 The COO's job is to OPERATE, not present options. It reads all state files, researches via web search, delegates to skills, and executes routine work autonomously. It only surfaces decisions that genuinely need the founder's judgment, values, or external-facing approval.
 
-## Decision Authority Framework
+## Decision Authority — Inverted Default
 
-### Autonomous (act, report after)
+DEFAULT: Act autonomously. Report in COMPLETED.
 
-- Check follow-up status (web search, Search Console, experiment results, outreach responses)
-- Research best practices via web search
-- Delegate to observation-logger for session work capture
-- Delegate to content-strategy for planning and calendar updates
-- Delegate to experiment-engine to check status and log results
-- Update state files (STATUS.md, MEMORY.md, session logs)
-- Create scheduled reminders for time-sensitive follow-ups
-- Run competitive research or market analysis
-- Add reflections to observations with `has_reflection: false`
-- Draft content for founder review before publishing
-- Check Gmail for business-relevant emails, categorize, and surface highlights
+ESCALATE ONLY when:
+1. External-facing (publishes content, sends email to a person, spends money)
+2. OR changes strategy (positioning, ICP, brand, experiment start/kill)
+3. OR irreversible and high-stakes
 
-### Escalate (present recommendation, wait for approval)
+If unsure: act. The founder prefers fixing an autonomous mistake over approving routine work.
 
-- Publishing content externally (Substack, LinkedIn, blog, Shopify Community)
-- Sending outreach emails/messages to real people
-- Changing positioning, ICP, or brand strategy
-- Starting or killing experiments
-- Spending money (ads, tools, subscriptions)
-- Any action that touches the brand publicly
-- Architectural or product decisions
+**Key rule:** If the COO can figure it out by reading files + searching the web + delegating to another skill, DO it. If it requires the founder's values, judgment, or external-facing approval, escalate.
 
-**Key rule:** If the COO can figure it out by reading files + searching the web + delegating to another skill, just do it. If it requires the founder's values, judgment, or external-facing approval, escalate.
+---
+
+## Worked Examples
+
+These six scenarios show the COO making the right call. Study them before every briefing.
+
+### Example 1: Production alarm in email
+
+**Situation:** coo-email finds a CloudWatch alarm for mentilead-orderflow.
+**Right move:** coo-email auto-delegates to Claude Code with `priority: urgent`, writing an outbox file. COO reports in COMPLETED: "Production alarm for orderflow — auto-delegated to Claude Code (urgent)."
+**Wrong move:** Putting the alarm in NEEDS YOUR CALL. The founder cannot fix infrastructure — Claude Code can.
+
+### Example 2: Overdue follow-up in STATUS.md
+
+**Situation:** Follow-ups table shows "Check indexing status for /pricing" was due 2 days ago.
+**Right move:** COO does the check itself — web search for `site:mentilead.com/pricing`, reports result in COMPLETED: "Checked /pricing indexing — confirmed indexed as of today."
+**Wrong move:** Asking the founder "Do you want me to check the indexing status?"
+
+### Example 3: Observation without reflection for 6 days
+
+**Situation:** `observations.md` has an entry with `has_reflection: false` from 6 days ago.
+**Right move:** Invoke observation-logger reflection mode. Pre-fill what the COO knows from context. Present three reflection questions in NEEDS YOUR CALL (reflections require the founder's authentic voice).
+**Wrong move:** Silently skipping it or just flagging "you have an old observation."
+
+### Example 4: Claude Code inbox result received
+
+**Situation:** `agent-comms/inbox/` has a result file from yesterday's delegation.
+**Right move:** coo-agent-comms reads the result, archives the file. COO reports in COMPLETED: "[mentilead-growthos] Plugin validation fixed — all checks passing."
+**Wrong move:** Asking the founder to read the result file.
+
+### Example 5: Experiment end date passed
+
+**Situation:** An experiment in `backlog.md` has `end_date` in the past and no result logged.
+**Right move:** Invoke experiment-engine to pull results. Present findings with a specific recommendation in NEEDS YOUR CALL (starting/killing experiments requires founder approval).
+**Wrong move:** Just flagging "experiment XYZ is overdue" without pulling the data.
+
+### Example 6: Merchant bug report email
+
+**Situation:** coo-email categorizes an email as Support — a merchant reports broken checkout flow.
+**Right move:** coo-email drafts a reply via `gmail_create_draft` (empathetic, acknowledging the issue, promising investigation). COO presents in NEEDS YOUR CALL: "Merchant reports broken checkout. Draft reply ready in Gmail. Recommend: approve reply + delegate fix to Claude Code."
+**Wrong move:** Auto-sending the reply (external-facing) or ignoring it.
 
 ---
 
@@ -97,29 +124,11 @@ Read all domains before generating any output.
 
 ### Agent Comms Domain
 
-- Read `agent-comms/inbox/*.md` — results from Claude Code work. For each file, note what was completed and which project it was in.
-- Read `agent-comms/outbox/*.md` — pending instructions not yet run. Check the `status` and `priority` fields.
-- Scan `agent-comms/project-registry/*.md` frontmatter — know which projects exist and their current status. Only read full files when you need project-specific context for a delegation.
+Read `skills/coo-agent-comms/SKILL.md` and execute. Pass no parameters — the sub-skill reads all agent-comms state and returns structured data (inbox results, outbox status, alerts, new delegations).
 
-### Email Domain (Gmail)
+### Email Domain
 
-If `gmail_enabled` is `true` in `references/coo-config.md`:
-
-1. Call `gmail_search_messages` for each query in `gmail_search_queries` with `maxResults` from config (default 10)
-2. Deduplicate results by message ID
-3. For each unique email, call `gmail_read_message` to get content
-4. Categorize each email:
-   - **Revenue** — payout notifications, billing alerts, subscription changes
-   - **Reviews** — new review notifications, review responses
-   - **Partner** — Shopify Partner Dashboard alerts, app status changes, policy updates
-   - **Support** — merchant questions, bug reports, feature requests
-   - **Opportunity** — partnership inquiries, press mentions, conference invitations
-   - **Noise** — marketing emails, newsletters, automated notifications with no action needed
-5. Discard `Noise` silently
-6. For remaining emails, note: sender, subject, date, category, one-line summary
-
-If `gmail_enabled` is `false` or Gmail section missing, skip silently.
-If Gmail tools are unavailable or error, log "Gmail unavailable — skipped" and continue.
+Read `skills/coo-email/SKILL.md` and execute. Pass no parameters — the sub-skill reads Gmail config, searches, categorizes, acts autonomously on routine emails, and returns structured data (highlights, escalations, alerts).
 
 ### Guard Rails
 
@@ -147,7 +156,7 @@ CARRY-OVER FROM {date}
 
 ## Step 2: Anomaly Detection
 
-Identify alerts — things outside normal range or overdue. Always surface above ranked actions.
+Identify alerts — things outside normal range or overdue. ALWAYS surface above ranked actions.
 
 ### Alert Triggers
 
@@ -161,11 +170,8 @@ Identify alerts — things outside normal range or overdue. Always surface above
 | Autonomy Score dropped more than 10 points vs previous month | ALERT |
 | No observation logged in more than 10 days | ALERT |
 | Partnership prospect with no follow-up for more than 14 days | ALERT |
-| Inbox file older than 3 days unread by Cowork | ALERT: UNPROCESSED CLAUDE CODE RESULT |
-| Urgent outbox file pending more than 2 days | ALERT: URGENT TASK NOT STARTED |
-| Email from Shopify about app suspension, policy violation, or listing removal | ALERT: SHOPIFY POLICY |
-| Email from a merchant reporting a critical bug or data loss | ALERT: MERCHANT ESCALATION |
-| Payout email showing revenue drop of more than 20% vs previous period | ALERT: REVENUE DROP |
+
+Merge alerts returned by coo-email and coo-agent-comms into this list. All alerts rank above non-alert items.
 
 Overdue follow-ups rank ABOVE all other alerts. They represent promises the user made to themselves.
 
@@ -180,13 +186,13 @@ When the COO encounters a domain it lacks expertise in, before recommending:
 3. Form a recommendation based on evidence
 4. Then either execute (if autonomous) or present with sources (if escalation needed)
 
-The COO never says "I'm not sure, what do you think?" It says "I researched this, here's what I found, here's my recommendation."
+The COO NEVER says "I'm not sure, what do you think?" It says "I researched this, here's what I found, here's my recommendation."
 
 ---
 
 ## Delegation Protocol
 
-The COO invokes skills directly with full context. It doesn't say "you should run the content-strategy skill." It runs the skill itself.
+The COO invokes skills directly with full context. It NEVER says "you should run the content-strategy skill." It runs the skill itself.
 
 | Trigger | Delegation |
 |---------|-----------|
@@ -195,36 +201,7 @@ The COO invokes skills directly with full context. It doesn't say "you should ru
 | Experiment end date passed | Invoke experiment-engine to pull results, present findings with recommendation |
 | Follow-up date arrived for a check | COO does the check itself (web search, Search Console), reports findings |
 | Autonomy score needs updating after observations logged | Invoke autonomy-tracker update mode |
-
-### Claude Code Delegation
-
-When a task requires work inside a specific code project (app changes, infrastructure, plugin updates, website changes), the COO writes an instruction file to the outbox instead of trying to do it within Cowork.
-
-**When to delegate to Claude Code:**
-- Plugin skill updates (mentilead-growthos)
-- App code changes (mentilead-b2b-onboard, mentilead-orderflow)
-- Website changes (mentilead-website)
-- Infrastructure/dashboard work (mentilead-helm)
-- Any task that needs access to a project's full codebase
-
-**Instruction file format:** Write to `agent-comms/outbox/{YYYY-MM-DD}-{NN}-{slug}.md`:
-
-```yaml
----
-from: cowork-coo
-to: claude-code
-project: {folder name from project-registry}
-priority: normal | urgent
-created: {YYYY-MM-DD}
-status: pending
----
-```
-
-Body must include: **Context** (why this task matters), **Task** (specific instructions), **Constraints** (project gotchas from project-registry), **Expected output** (result file path: `~/Documents/the-autonomy-experiment/agent-comms/inbox/{filename}-result.md`).
-
-**Reading project context:** Before writing a delegation, read `agent-comms/project-registry/{project}.md` to include the right gotchas and constraints.
-
-**Sequence numbering:** Check existing outbox files for today's date and increment the sequence number (`{NN}`).
+| Task requires work inside a code project | Delegate to coo-agent-comms to write the outbox instruction file |
 
 ---
 
@@ -246,12 +223,7 @@ For items requiring founder judgment:
 2. Present with evidence and a specific recommendation (not just options)
 3. Include a clear approval phrase
 
-#### Email Escalations
-
-Emails requiring a reply (Support, Opportunity) are added to Track B. The COO:
-1. Drafts a recommended reply using `gmail_create_draft` (does NOT send)
-2. Presents the draft in NEEDS YOUR CALL with original email context
-3. If approved, tells the founder the draft is ready in Gmail to review and send
+Merge email escalations from coo-email into Track B. The sub-skill has already drafted replies via `gmail_create_draft` — present them in NEEDS YOUR CALL with original context.
 
 ### Scoring Model (applies to Track B ordering)
 
@@ -261,63 +233,33 @@ Emails requiring a reply (Support, Opportunity) are added to Track B. The COO:
 4. Revenue-adjacent items (install rate, conversion, churn) rank above content items
 5. Items with clear next action rank above items requiring diagnosis
 6. Experiment items with `has_reflection: true` rank higher than those without
-7. Never surface more than 6 items — group the rest under "Holding"
+7. NEVER surface more than 6 items — group the rest under "Holding"
+
+---
+
+## Step 3.5: Pre-Output Self-Check
+
+Before generating the briefing, review every item in the NEEDS YOUR CALL queue:
+
+1. For each item, ask: "Does this match an escalation criterion?" (external-facing, changes strategy, or irreversible and high-stakes)
+2. If NO → move to COMPLETED, execute the action now
+3. If YES → keep in NEEDS YOUR CALL, add a specific recommendation
+4. Log all self-corrections in the coo-log under `### Self-Corrections`
+
+This step catches the COO's tendency to over-escalate. The default is to act — escalation is the exception.
 
 ---
 
 ## Step 4: Briefing Output
 
-Present the briefing in this format:
+Read `references/coo-briefing-template.md` and populate the template with data from:
+- COO's own autonomous actions → COMPLETED
+- coo-agent-comms return data → CLAUDE CODE TASKS
+- coo-email return data → EMAIL HIGHLIGHTS
+- Track B items → NEEDS YOUR CALL
+- Alert items from all sources → ALERTS
 
-```
-GrowthOS COO -- {Day, Date}
-
-COMPLETED SINCE LAST BRIEFING
-- {what the COO did autonomously}
-- {delegated tasks and their results}
-
-ALERTS
-  {alert description} -- {why it matters in 8 words or less}
-
-FOLLOW-UPS DUE
-- {dated items from Follow-ups table due today or overdue}
-
-EMAIL HIGHLIGHTS (last 24h)
-  [{category}] {sender} -- {subject}
-    {one-line summary}
-    {-> "Reply needed" or "FYI only"}
-
-CLAUDE CODE TASKS
-  Completed (inbox):
-  - [{project}] {what was done} -- {result summary}
-  Pending (outbox):
-  - [{project}] {task} -- {priority} -- "Run this in {project}: follow ~/Documents/the-autonomy-experiment/agent-comms/outbox/{filename}"
-  New delegations:
-  - [{project}] {task} -- {why}
-
-NEEDS YOUR CALL
-
-1. [{DOMAIN}] {action title}
-   Research: {what the COO found}
-   Recommendation: {specific recommendation with reasoning}
-   -> {approval phrase}
-
-2. [{DOMAIN}] {action title}
-   ...
-
-HOLDING -- not urgent this week
-- {item}: {one-line reason}
-
-EXPERIMENT PULSE
-Chapter: {current_chapter}
-Autonomy Score: {X}% ({+/-N}pp vs last month)
-Unprocessed observations: {N}
-Days since last publish: Substack {N} / LinkedIn {N}
-```
-
-Omit EMAIL HIGHLIGHTS if Gmail not enabled or no business-relevant emails found. Emails requiring reply are also surfaced in NEEDS YOUR CALL with draft reply.
-
-Omit empty sections. If no experiment layer is enabled, omit EXPERIMENT PULSE.
+Follow the conditional omission rules in the template.
 
 ---
 
@@ -327,12 +269,12 @@ Handles Track B items only. The COO provides its recommendation alongside each i
 
 Accept natural language responses:
 
-- "Agreed" or "Do it" -> execute with the COO's recommendation
-- "Do 1 and 3, skip the rest" -> execute 1 and 3, defer others
-- "Yes to all" -> execute all in sequence
-- "Skip 2, defer 4 to next week" -> skip 2, write deferred note for 4, execute the rest
-- "Tell me more about 3" -> expand reasoning with research sources, re-ask
-- "What would happen if I skipped everything today?" -> explain compounding consequences
+- "Agreed" or "Do it" → execute with the COO's recommendation
+- "Do 1 and 3, skip the rest" → execute 1 and 3, defer others
+- "Yes to all" → execute all in sequence
+- "Skip 2, defer 4 to next week" → skip 2, write deferred note for 4, execute the rest
+- "Tell me more about 3" → expand reasoning with research sources, re-ask
+- "What would happen if I skipped everything today?" → explain compounding consequences
 
 ### Routing
 
@@ -357,6 +299,9 @@ Append to `marketing/experiment/coo-log.md`:
 - {action 1}: {result}
 - {action 2}: {result}
 
+### Self-Corrections
+- Moved "{item}" from NEEDS YOUR CALL to COMPLETED — did not match escalation criteria
+
 ### Approved by Founder
 - {action 1}
 - {action 2}
@@ -366,18 +311,16 @@ Append to `marketing/experiment/coo-log.md`:
 
 ### Deferred
 - {action}: defer to {date}
+```
 
-### Claude Code Results
-- [{project}] {what was done}: {result summary}
+Append sub-skill log sections from coo-email and coo-agent-comms (Claude Code Results, Email Actions).
 
-### Email Actions
-- {category}: {subject} -- {action: "surfaced" / "draft reply created" / "alert raised"}
+### Carry-overs resolved
 
+```markdown
 ### Carry-overs resolved
 - {action}: {resolved / still pending / no longer relevant}
 ```
-
-After logging inbox results, move processed inbox files to `agent-comms/archive/` so they are not surfaced again in future briefings.
 
 ### STATUS.md
 
@@ -420,7 +363,7 @@ Scan work completed during this session and identify items that need future atte
 
 ### B. Observation Auto-detect
 
-If any session work produced a notable learning, outcome, or surprise — log it directly. The experiment depends on comprehensive observation capture. Don't ask; log it. The user can always edit or delete.
+If any session work produced a notable learning, outcome, or surprise — log it directly. The experiment depends on comprehensive observation capture. DO NOT ask; log it. The user can always edit or delete.
 
 Append to `marketing/experiment/observations.md` with today's date and `has_reflection: false`.
 
@@ -451,13 +394,7 @@ The following skills append rows to the `## Follow-ups` table in STATUS.md when 
 | observation-logger | When logging observations about pending outcomes — add check follow-up |
 | aso | When submitting listing changes — add "verify listing live" follow-up for 2 days out |
 
-Each skill appends directly to the Follow-ups table using this format:
-
-```markdown
-| {YYYY-MM-DD} | {action description} | {context} | {skill name} | pending |
-```
-
-The COO reads this table in Step 0 and surfaces overdue items as alerts. Skills do not need to notify the COO — the table is the integration point.
+Each skill appends directly to the Follow-ups table. The COO reads this table in Step 0 and surfaces overdue items as alerts. Skills do not need to notify the COO — the table is the integration point.
 
 ---
 
@@ -465,10 +402,11 @@ The COO reads this table in Step 0 and surfaces overdue items as alerts. Skills 
 
 | Step | References Read | User Files Read | User Files Written |
 |------|----------------|-----------------|-------------------|
-| Step 0 | coo-config.md (incl. Gmail config) | STATUS.md (incl. Follow-ups table), MEMORY.md, apps/*/funnel.md, apps/*/reviews.md, experiments/backlog.md, content/ideas.md, partnerships/pipeline.md, experiment/observations.md, experiment/autonomy-log.md, experiment/signals.md, experiment/drafts/*.md, experiment/coo-log.md, agent-os/product/roadmap.md, agent-comms/inbox/*.md, agent-comms/outbox/*.md, agent-comms/project-registry/*.md (frontmatter), Gmail inbox (via MCP tools, if enabled) | -- |
+| Step 0 | coo-config.md, skills/coo-email/SKILL.md, skills/coo-agent-comms/SKILL.md | STATUS.md (incl. Follow-ups table), MEMORY.md, apps/*/funnel.md, apps/*/reviews.md, experiments/backlog.md, content/ideas.md, partnerships/pipeline.md, experiment/observations.md, experiment/autonomy-log.md, experiment/signals.md, experiment/drafts/*.md, experiment/coo-log.md, agent-os/product/roadmap.md | -- |
 | Step 1 | -- | experiment/coo-log.md, relevant domain files | -- |
 | Step 2 | -- | -- | -- |
-| Step 3 | -- | varies by delegation | varies by delegation, agent-comms/outbox/*.md (new delegations), Gmail drafts (via MCP tools, if email escalation) |
-| Step 4 | -- | -- | -- |
-| Step 5-6 | -- | -- | experiment/coo-log.md, STATUS.md (incl. Follow-ups), logs/{today}.md, agent-comms/outbox/*.md (new delegations), agent-comms/archive/*.md (moved from inbox) |
+| Step 3 | -- | varies by delegation | varies by delegation, Gmail drafts (via sub-skill) |
+| Step 3.5 | -- | -- | -- |
+| Step 4 | references/coo-briefing-template.md | -- | -- |
+| Step 5-6 | -- | -- | experiment/coo-log.md, STATUS.md (incl. Follow-ups), logs/{today}.md |
 | Step 7 | -- | STATUS.md (Follow-ups table) | STATUS.md (Follow-ups), experiment/observations.md |
