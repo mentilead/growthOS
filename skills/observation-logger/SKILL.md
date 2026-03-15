@@ -3,9 +3,10 @@ name: log
 description: >
   Capture experiment observations — agent decisions, failures, escalations,
   contradictions between enterprise advice and personal practice, autonomy
-  milestones. Three modes: quick capture (under 60 seconds), reflection
-  (add depth to recent observations), and review (monthly summary with
-  autonomy score). Use when the user wants to log something that happened.
+  milestones. Quick capture (under 60 seconds) with automatic type-specific
+  reflection prompts, standalone reflection mode for older observations,
+  and monthly review with autonomy score. Use when the user wants to log
+  something that happened.
 argument-hint: "What happened?"
 ---
 
@@ -133,6 +134,36 @@ Logged OBS-{NNN}:
 {if autonomy-relevant: "Autonomy score updated: {score}% ({autonomous}/{total} decisions this month)"}
 ```
 
+### Offer Reflection
+
+Immediately after confirming the logged entry, offer type-specific reflection questions while the moment is fresh. This is optional — the user can skip instantly to preserve the under-60-second quick capture path.
+
+1. Ask: **"Quick reflection? (skip to move on)"**
+2. Present 2 questions based on the observation's classified type:
+
+| Type | Question 1 | Question 2 |
+|------|-----------|-----------|
+| `autonomous-action` | "What would have gone wrong without the agent?" | "What did it miss?" |
+| `human-escalation` | "Could you have given the agent enough context to handle this?" | "Why or why not?" |
+| `contradiction` | "Which side of the contradiction do you trust more right now?" | "Why?" |
+| `milestone` | "What's the next milestone this makes possible?" | "What could block it?" |
+| `agent-failure` | "What should the agent have done instead?" | "Is this a training gap or a fundamental limitation?" |
+
+3. **If user answers:** append a `#### Reflection` block to the observation entry:
+
+```markdown
+
+#### Reflection
+- **Q:** {question 1}
+- **A:** {user's answer}
+- **Q:** {question 2}
+- **A:** {user's answer}
+```
+
+And update `- **Has reflection:** false` → `- **Has reflection:** true`
+
+4. **If user says "skip" or equivalent:** leave `Has reflection: false` and proceed to Session Log & State Update (current behavior preserved)
+
 ### Session Log & State Update
 
 1. Append to `marketing/logs/{YYYY-MM-DD}.md`:
@@ -148,14 +179,15 @@ For adding depth to existing observations. Observations with reflections are the
 ### Show Recent Observations
 
 1. Read `marketing/experiment/observations.md`
-2. Show the last 5 observations as a numbered list:
+2. Skip any observation that already has a `#### Reflection` block (already reflected via Step 1)
+3. Show the last 5 unreflected observations as a numbered list:
    ```
    Recent observations:
    1. OBS-{NNN} ({date}) [{type}] — {what happened, truncated to one line}
    2. OBS-{NNN} ({date}) [{type}] — {what happened, truncated to one line}
    ...
    ```
-3. Let the user select one to expand
+4. Let the user select one to expand
 
 ### Prompt for Reflection
 
