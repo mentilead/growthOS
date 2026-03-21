@@ -30,6 +30,9 @@ CLAUDE CODE TASKS
   New delegations:
   - [{project}] {task} -- {why}
 
+OPERATIONAL GAPS (vs. {stage} readiness)
+  [{project}] {domain}: {what's missing} — {recommended action}
+
 NEEDS YOUR CALL
 
 1. [{DOMAIN}] {action title}
@@ -55,3 +58,4 @@ Days since last publish: Substack {N} / LinkedIn {N}
 - Omit EMAIL HIGHLIGHTS if Gmail not enabled or no business-relevant emails found. Emails requiring reply are also surfaced in NEEDS YOUR CALL with draft reply.
 - Omit empty sections. If no experiment layer is enabled, omit EXPERIMENT PULSE.
 - Omit CLAUDE CODE TASKS if no inbox results, no pending outbox, and no new delegations.
+- Omit OPERATIONAL GAPS if no gaps found for any project's current stage.

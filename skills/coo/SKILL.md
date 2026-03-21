@@ -110,6 +110,7 @@ Read all domains before generating any output.
 
 - `agent-os/product/roadmap.md` — current phase per app, blockers, next milestones
 - Check `marketing/STATUS.md` for `dev_status` field
+- `references/business-readiness.md` — readiness model for gap analysis in Step 2.5
 
 ### Publishing Domain
 
@@ -174,6 +175,27 @@ Identify alerts — things outside normal range or overdue. ALWAYS surface above
 Merge alerts returned by coo-email and coo-agent-comms into this list. All alerts rank above non-alert items.
 
 Overdue follow-ups rank ABOVE all other alerts. They represent promises the user made to themselves.
+
+---
+
+## Step 2.5: Strategic Gap Analysis
+
+Proactively identify what should exist at each project's current stage but doesn't.
+
+1. Read `references/business-readiness.md`
+2. For each project, read its `dev_status` from `marketing/STATUS.md`
+3. Look up the matching lifecycle stage in business-readiness.md
+4. Cross-reference each domain's "Expected" column against actual state loaded in Step 0 — project registries, marketing state, agent-comms history
+5. A domain is a gap when the expected capability has no evidence in any state file
+6. Apply judgment — skip domains where context makes the gap irrelevant (e.g., SEO for an internal tool, or billing for a free app)
+
+### Multi-App Consistency Check
+
+If multiple apps exist, compare operational maturity across apps using the Cross-Project Consistency section of business-readiness.md. Flag significant imbalances where one app has a domain covered but another at the same or later stage does not.
+
+### Output
+
+Pass identified gaps to Step 3. Gaps that the COO can resolve autonomously (e.g., writing a delegation task, creating a follow-up) go to Track A. Gaps that require founder judgment (e.g., choosing an error monitoring tool, deciding on a billing model) go to Track B with a specific recommendation.
 
 ---
 
@@ -258,6 +280,7 @@ Read `references/coo-briefing-template.md` and populate the template with data f
 - coo-email return data → EMAIL HIGHLIGHTS
 - Track B items → NEEDS YOUR CALL
 - Alert items from all sources → ALERTS
+- Step 2.5 gap analysis → OPERATIONAL GAPS
 
 Follow the conditional omission rules in the template.
 
@@ -405,6 +428,7 @@ Each skill appends directly to the Follow-ups table. The COO reads this table in
 | Step 0 | coo-config.md, skills/coo-email/SKILL.md, skills/coo-agent-comms/SKILL.md | STATUS.md (incl. Follow-ups table), MEMORY.md, apps/*/funnel.md, apps/*/reviews.md, experiments/backlog.md, content/ideas.md, partnerships/pipeline.md, experiment/observations.md, experiment/autonomy-log.md, experiment/signals.md, experiment/drafts/*.md, experiment/coo-log.md, agent-os/product/roadmap.md | -- |
 | Step 1 | -- | experiment/coo-log.md, relevant domain files | -- |
 | Step 2 | -- | -- | -- |
+| Step 2.5 | references/business-readiness.md | STATUS.md (dev_status), state loaded in Step 0 | -- |
 | Step 3 | -- | varies by delegation | varies by delegation, Gmail drafts (via sub-skill) |
 | Step 3.5 | -- | -- | -- |
 | Step 4 | references/coo-briefing-template.md | -- | -- |
